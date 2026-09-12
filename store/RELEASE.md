@@ -54,8 +54,8 @@ Dopo un paio di minuti l'URL da usare nella console è:
 5. **Test e rilascio → Test interno → Crea release**: Play App Signing (lasciare attivo, è quello
    che protegge la chiave vera), carica `app-release.aab`, note di rilascio dal listing. Aggiungi la tua
    email come tester e installa dal link.
-6. Quando sei soddisfatto: **Test chiuso** (12 tester, 14 giorni) → richiedi accesso alla produzione
-   → **Produzione**.
+6. Quando sei soddisfatto: **Test chiuso** (12 tester, 14 giorni: come trovarli in `store/TESTER.md`)
+   → richiedi accesso alla produzione → **Produzione**.
 
 ## 3. Prossime versioni
 

@@ -1,0 +1,63 @@
+# Test chiuso: reclutare i 12 tester
+
+Google richiede **12 tester Android opt-in per 14 giorni consecutivi** prima di
+sbloccare la produzione (account sviluppatore personali). Non serve che usino
+l'app ogni giorno: basta che accettino l'invito e la tengano installata.
+
+## 1. Gruppo Google (2 minuti, va fatto con il tuo account)
+
+1. Apri https://groups.google.com/creategroup (loggato con l'account della Play Console).
+2. **Nome gruppo**: `Libera la Mente – tester` · **Email gruppo**: `libera-la-mente-tester`
+   · **Descrizione**: `Tester del test chiuso di Libera la Mente su Google Play.`
+3. Avanti → **Chi può cercare il gruppo**: Chiunque sul Web · **Chi può iscriversi**: Chiunque sul Web
+   (così chi clicca il link entra da solo, senza approvazione) · **Chi può pubblicare**: Solo proprietari.
+4. Avanti → Crea gruppo. L'indirizzo sarà `libera-la-mente-tester@googlegroups.com`
+   e il link di iscrizione `https://groups.google.com/g/libera-la-mente-tester`.
+5. Play Console → Test e rilascio → **Test chiuso** → scheda Tester → *Crea lista email*
+   → nome "Gruppo tester" → incolla `libera-la-mente-tester@googlegroups.com` → Salva.
+6. Sempre lì copia il **link di opt-in** (Copia link) e, dopo il primo rilascio, il link Play.
+
+Chi entra nel gruppo diventa tester automaticamente: mai più email da aggiungere a mano.
+
+## 2. Messaggio WhatsApp / email (colleghi, amici, famiglia con Android)
+
+> Ciao! Sto pubblicando **Libera la Mente**, un'app gratuita di respirazione guidata, pillole di
+> calma e suoni ASMR — senza account e senza pubblicità. Google mi chiede 12 tester Android per
+> 14 giorni prima del rilascio. Ti basta:
+> 1. entrare nel gruppo: https://groups.google.com/g/libera-la-mente-tester
+> 2. accettare l'invito al test: `<LINK OPT-IN>`
+> 3. installare da Play: `<LINK PLAY>` e **tenerla installata due settimane** (usala quando vuoi,
+>    anche una volta sola).
+> Se hai un minuto, scrivimi cosa cambieresti: serve anche a me per il questionario di Google. Grazie 🙏
+
+## 3. Post per Reddit (r/AndroidClosedTesting, r/AndroidAppTesters) — in inglese
+
+**Titolo**
+`[Testers needed] Libera la Mente – box breathing, calm pills & ASMR (free, no ads). Will test yours back!`
+
+**Testo**
+> Hi all! I'm an indie dev from Italy publishing **Libera la Mente**, a free calm-your-mind app:
+> box breathing guided by voice and vibration, one short "pill" of calm a day (classics + ideas from
+> books like Flow and The Power of Now), and ASMR sounds from YouTube sorted by category
+> (white noise, barber, rain, fire…). No account, no ads, no tracking — everything stays on the phone.
+> Italian and English.
+>
+> Google needs 12 testers opted in for 14 days. To join:
+> 1. Google Group: https://groups.google.com/g/libera-la-mente-tester
+> 2. Opt-in link: `<OPT-IN LINK>`
+> 3. Install from Play: `<PLAY LINK>` — and please keep it installed for 14 days.
+>
+> **I'll test your app back** — drop your links in the comments or DM. Feedback of any kind is welcome
+> (I'll mention it in the production-access questionnaire). Thanks!
+
+Regole tipiche di quei subreddit: un post per app, dichiara che ricambi, rispondi a chi commenta,
+e ricambia davvero (installa le loro app e tienile 14 giorni: contano per loro come i tuoi per te).
+
+## 4. Dopo 14 giorni
+
+Play Console → Dashboard → *Richiedi l'accesso alla produzione* → questionario:
+- come hai reclutato (colleghi, scambio tra sviluppatori su Reddit/Discord/Testers Community);
+- quanti erano attivi, che feedback hai ricevuto (cita 2-3 cose concrete);
+- cosa hai cambiato in base al feedback (anche piccolo: un testo, un bug, un'icona).
+
+Risposte concrete e oneste passano; risposte vuote o tester "comprati" vengono rifiutate.
