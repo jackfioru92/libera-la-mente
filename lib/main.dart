@@ -81,6 +81,8 @@ class _CalmaAppState extends State<CalmaApp> {
     if (lang is String) widget.prefs.setLanguageCode(lang);
     final scene = demo['scene'];
     if (scene is String) widget.prefs.setSceneId(scene);
+    final voice = demo['voice'];
+    if (voice is bool) widget.prefs.setVoiceGuide(voice);
     final videoId = demo['video'] as String?;
     final start = demo['start'] == true;
     if (videoId == null && !start) return;

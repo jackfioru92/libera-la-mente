@@ -92,6 +92,11 @@ già nel manifest.
 - Niente notifiche e niente widget home: prossimi passi naturali
   (`flutter_local_notifications`, `home_widget`).
 
+## Rilascio
+
+Android: vedi `store/RELEASE.md` (AAB firmato, materiale store, checklist Play Console).
+La firma richiede `android/key.properties` + `android/upload-keystore.jks`, fuori da git.
+
 ## Debug: aprire una scheda da riga di comando
 
 Solo in build debug, se esiste `tmp/demo.json` nel container dell'app:
