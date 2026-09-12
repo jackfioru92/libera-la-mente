@@ -6,7 +6,7 @@ l'app ogni giorno: basta che accettino l'invito e la tengano installata.
 
 ## 1. Gruppo Google (2 minuti, va fatto con il tuo account)
 
-1. Apri https://groups.google.com/creategroup (loggato con l'account della Play Console).
+1. Apri https://groups.google.com (loggato con l'account della Play Console) e clicca **Crea gruppo** in alto a sinistra.
 2. **Nome gruppo**: `Libera la Mente – tester` · **Email gruppo**: `libera-la-mente-tester`
    · **Descrizione**: `Tester del test chiuso di Libera la Mente su Google Play.`
 3. Avanti → **Chi può cercare il gruppo**: Chiunque sul Web · **Chi può iscriversi**: Chiunque sul Web
