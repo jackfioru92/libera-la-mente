@@ -30,28 +30,41 @@ Chi entra nel gruppo diventa tester automaticamente: mai più email da aggiunger
 >    anche una volta sola).
 > Se hai un minuto, scrivimi cosa cambieresti: serve anche a me per il questionario di Google. Grazie 🙏
 
-## 3. Post per Reddit (r/AndroidClosedTesting, r/AndroidAppTesters) — in inglese
+## 3. Reddit (r/AndroidClosedTesting, r/AndroidAppTesters)
+
+Come funziona: crea un account su reddit.com, entra nel subreddit (**Join**), leggi le regole nella
+colonna destra, **Create Post → Text**, scegli il flair tipo "Testers needed" / "Test for test".
+Regola non scritta: **test for test** — installi le app degli altri (gruppo → opt-in → Play, 14 giorni)
+e commenti sotto ai loro post con i tuoi link; loro ricambiano. Account nuovo con 0 karma: commenta
+prima qualche post, poi pubblica.
 
 **Titolo**
-`[Testers needed] Libera la Mente – box breathing, calm pills & ASMR (free, no ads). Will test yours back!`
+`[Testers needed – I'll test yours back] Libera la Mente: box breathing, calm pills & ASMR (free, no ads)`
 
 **Testo**
 > Hi all! I'm an indie dev from Italy publishing **Libera la Mente**, a free calm-your-mind app:
-> box breathing guided by voice and vibration, one short "pill" of calm a day (classics + ideas from
-> books like Flow and The Power of Now), and ASMR sounds from YouTube sorted by category
-> (white noise, barber, rain, fire…). No account, no ads, no tracking — everything stays on the phone.
+> box breathing guided by voice and vibration, one short "pill" of calm a day (Stoic classics + ideas
+> from books like Flow and The Power of Now), and ASMR sounds from YouTube sorted by category
+> (white noise, barber, rain, fire…). No account, no ads, no tracking — everything stays on your phone.
 > Italian and English.
 >
-> Google needs 12 testers opted in for 14 days. To join:
+> Google needs 12 testers opted in for 14 days. To join (takes 1 minute):
 > 1. Google Group: https://groups.google.com/g/libera-la-mente-tester
-> 2. Opt-in link: https://play.google.com/apps/testing/it.liberalamente.app
-> 3. Install from Play: https://play.google.com/store/apps/details?id=it.liberalamente.app — and please keep it installed for 14 days.
+> 2. Opt-in: https://play.google.com/apps/testing/it.liberalamente.app
+> 3. Install: https://play.google.com/store/apps/details?id=it.liberalamente.app — and please keep it installed for 14 days 🙏
 >
-> **I'll test your app back** — drop your links in the comments or DM. Feedback of any kind is welcome
-> (I'll mention it in the production-access questionnaire). Thanks!
+> **I'll test yours back, same day** — drop your links in the comments or DM me. Any feedback is
+> welcome, I'll use it for the production questionnaire. Thanks!
 
-Regole tipiche di quei subreddit: un post per app, dichiara che ricambi, rispondi a chi commenta,
-e ricambia davvero (installa le loro app e tienile 14 giorni: contano per loro come i tuoi per te).
+**Commento sotto ai post degli altri** (dopo aver installato davvero la loro app)
+> Joined the group, opted in and installed — will keep it for 14+ days 👍
+> Mine if you can return the favour:
+> Group: https://groups.google.com/g/libera-la-mente-tester
+> Opt-in: https://play.google.com/apps/testing/it.liberalamente.app
+> Play: https://play.google.com/store/apps/details?id=it.liberalamente.app
+
+Tieni un foglio (app, data, link) e non disinstallare prima di 14 giorni.
+Alternativa senza forum: l'app **Testers Community** su Play (stesso principio, dal telefono).
 
 ## 4. Dopo 14 giorni
 
