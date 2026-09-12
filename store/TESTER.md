@@ -25,8 +25,8 @@ Chi entra nel gruppo diventa tester automaticamente: mai più email da aggiunger
 > calma e suoni ASMR — senza account e senza pubblicità. Google mi chiede 12 tester Android per
 > 14 giorni prima del rilascio. Ti basta:
 > 1. entrare nel gruppo: https://groups.google.com/g/libera-la-mente-tester
-> 2. accettare l'invito al test: `<LINK OPT-IN>`
-> 3. installare da Play: `<LINK PLAY>` e **tenerla installata due settimane** (usala quando vuoi,
+> 2. accettare l'invito al test: https://play.google.com/apps/testing/it.liberalamente.app
+> 3. installare da Play: https://play.google.com/store/apps/details?id=it.liberalamente.app e **tenerla installata due settimane** (usala quando vuoi,
 >    anche una volta sola).
 > Se hai un minuto, scrivimi cosa cambieresti: serve anche a me per il questionario di Google. Grazie 🙏
 
@@ -44,8 +44,8 @@ Chi entra nel gruppo diventa tester automaticamente: mai più email da aggiunger
 >
 > Google needs 12 testers opted in for 14 days. To join:
 > 1. Google Group: https://groups.google.com/g/libera-la-mente-tester
-> 2. Opt-in link: `<OPT-IN LINK>`
-> 3. Install from Play: `<PLAY LINK>` — and please keep it installed for 14 days.
+> 2. Opt-in link: https://play.google.com/apps/testing/it.liberalamente.app
+> 3. Install from Play: https://play.google.com/store/apps/details?id=it.liberalamente.app — and please keep it installed for 14 days.
 >
 > **I'll test your app back** — drop your links in the comments or DM. Feedback of any kind is welcome
 > (I'll mention it in the production-access questionnaire). Thanks!
