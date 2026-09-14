@@ -956,6 +956,18 @@ abstract class AppLocalizations {
   /// **'Inspira, trattieni, espira: senza guardare lo schermo.'**
   String get voiceGuideSubtitle;
 
+  /// No description provided for @hapticsOn.
+  ///
+  /// In it, this message translates to:
+  /// **'Vibrazione attiva'**
+  String get hapticsOn;
+
+  /// No description provided for @hapticsOff.
+  ///
+  /// In it, this message translates to:
+  /// **'Vibrazione spenta'**
+  String get hapticsOff;
+
   /// No description provided for @voiceOn.
   ///
   /// In it, this message translates to:

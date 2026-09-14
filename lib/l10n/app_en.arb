@@ -153,6 +153,8 @@
   "voiceGuide": "Voice guide",
   "voiceGuideTitle": "Says each phase out loud",
   "voiceGuideSubtitle": "Inhale, hold, exhale: no need to look at the screen.",
+  "hapticsOn": "Vibration on",
+  "hapticsOff": "Vibration off",
   "voiceOn": "Voice guide on",
   "voiceOff": "Voice guide off",
   "chooseVoice": "Choose the voice",

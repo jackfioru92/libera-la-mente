@@ -475,6 +475,12 @@ class AppLocalizationsEn extends AppLocalizations {
       'Inhale, hold, exhale: no need to look at the screen.';
 
   @override
+  String get hapticsOn => 'Vibration on';
+
+  @override
+  String get hapticsOff => 'Vibration off';
+
+  @override
   String get voiceOn => 'Voice guide on';
 
   @override

@@ -163,6 +163,8 @@
   "voiceGuide": "Voce guida",
   "voiceGuideTitle": "Dice la fase a voce",
   "voiceGuideSubtitle": "Inspira, trattieni, espira: senza guardare lo schermo.",
+  "hapticsOn": "Vibrazione attiva",
+  "hapticsOff": "Vibrazione spenta",
   "voiceOn": "Voce guida attiva",
   "voiceOff": "Voce guida spenta",
   "chooseVoice": "Scegli la voce",

@@ -476,6 +476,12 @@ class AppLocalizationsIt extends AppLocalizations {
       'Inspira, trattieni, espira: senza guardare lo schermo.';
 
   @override
+  String get hapticsOn => 'Vibrazione attiva';
+
+  @override
+  String get hapticsOff => 'Vibrazione spenta';
+
+  @override
   String get voiceOn => 'Voce guida attiva';
 
   @override

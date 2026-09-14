@@ -241,6 +241,22 @@ class _RespiraScreenState extends State<RespiraScreen>
                         ),
                         const Spacer(),
                         IconButton(
+                          iconSize: 32,
+                          padding: const EdgeInsets.all(10),
+                          tooltip: prefs.haptics ? l.hapticsOn : l.hapticsOff,
+                          onPressed: () {
+                            final on = !prefs.haptics;
+                            prefs.setHaptics(on);
+                            if (on) HapticFeedback.mediumImpact();
+                          },
+                          icon: Icon(
+                            Icons.vibration,
+                            color: prefs.haptics
+                                ? AppColors.accent
+                                : AppColors.muted.withValues(alpha: 0.6),
+                          ),
+                        ),
+                        IconButton(
                           iconSize: 36,
                           padding: const EdgeInsets.all(10),
                           tooltip: prefs.voiceGuide ? l.voiceOn : l.voiceOff,
