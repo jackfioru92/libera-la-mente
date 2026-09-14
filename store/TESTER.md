@@ -2,7 +2,7 @@
 
 Google richiede **12 tester Android opt-in per 14 giorni consecutivi** prima di
 sbloccare la produzione (account sviluppatore personali). Non serve che usino
-l'app ogni giorno: basta che accettino l'invito e la tengano installata.
+l'app ogni giorno: basta che accettino l'invito, la tengano installata e la aprano ogni tanto.
 
 ## 1. Gruppo Google (2 minuti, va fatto con il tuo account)
 
@@ -26,8 +26,8 @@ Chi entra nel gruppo diventa tester automaticamente: mai più email da aggiunger
 > 14 giorni prima del rilascio. Ti basta:
 > 1. entrare nel gruppo: https://groups.google.com/g/libera-la-mente-tester
 > 2. accettare l'invito al test: https://play.google.com/apps/testing/it.liberalamente.app
-> 3. installare da Play: https://play.google.com/store/apps/details?id=it.liberalamente.app e **tenerla installata due settimane** (usala quando vuoi,
->    anche una volta sola).
+> 3. installare da Play: https://play.google.com/store/apps/details?id=it.liberalamente.app e **tenerla installata due settimane**, aprendola un paio di volte a
+>    settimana (bastano due minuti).
 > Se hai un minuto, scrivimi cosa cambieresti: serve anche a me per il questionario di Google. Grazie 🙏
 
 ## 3. Reddit (r/AndroidClosedTesting, r/AndroidAppTesters)
@@ -51,7 +51,7 @@ prima qualche post, poi pubblica.
 > Google needs 12 testers opted in for 14 days. To join (takes 1 minute):
 > 1. Google Group: https://groups.google.com/g/libera-la-mente-tester
 > 2. Opt-in: https://play.google.com/apps/testing/it.liberalamente.app
-> 3. Install: https://play.google.com/store/apps/details?id=it.liberalamente.app — and please keep it installed for 14 days 🙏
+> 3. Install: https://play.google.com/store/apps/details?id=it.liberalamente.app — and please keep it installed for 14 days, opening it a couple of times a week 🙏
 >
 > **I'll test yours back, same day** — drop your links in the comments or DM me. Any feedback is
 > welcome, I'll use it for the production questionnaire. Thanks!
@@ -65,6 +65,14 @@ prima qualche post, poi pubblica.
 
 Tieni un foglio (app, data, link) e non disinstallare prima di 14 giorni.
 Alternativa senza forum: l'app **Testers Community** su Play (stesso principio, dal telefono).
+
+## Problemi tipici dei tester
+
+- **"App not available"** per tester all'estero → la traccia è limitata all'Italia: *Test chiuso →
+  traccia → Paesi/aree geografiche → Aggiungi → Seleziona tutti → Salva* (propagazione ~1 h).
+- **"Not found"** subito dopo l'opt-in → attendere 10-30 minuti; usare lo **stesso account Google**
+  per gruppo, opt-in e Play.
+- **"Not available for your device"** → problema di compatibilità: chiedere modello e versione Android.
 
 ## 4. Dopo 14 giorni
 
