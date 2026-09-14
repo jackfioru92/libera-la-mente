@@ -3,6 +3,7 @@ import 'package:flutter/widgets.dart';
 
 import 'asmr_player.dart';
 import 'prefs.dart';
+import 'sound_mixer.dart';
 import 'voice_guide.dart';
 
 /// Navigazione tra schede e richieste di "avvio rapido" della respirazione.
@@ -56,6 +57,7 @@ class AppScope extends InheritedWidget {
     required this.nav,
     required this.images,
     required this.voice,
+    required this.mixer,
     required super.child,
   });
 
@@ -64,6 +66,7 @@ class AppScope extends InheritedWidget {
   final AppController nav;
   final SceneImages images;
   final VoiceGuide voice;
+  final SoundMixer mixer;
 
   static AppScope of(BuildContext context) {
     final scope = context.dependOnInheritedWidgetOfExactType<AppScope>();
@@ -77,5 +80,6 @@ class AppScope extends InheritedWidget {
       player != oldWidget.player ||
       nav != oldWidget.nav ||
       images != oldWidget.images ||
-      voice != oldWidget.voice;
+      voice != oldWidget.voice ||
+      mixer != oldWidget.mixer;
 }

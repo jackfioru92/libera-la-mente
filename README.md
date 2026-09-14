@@ -9,9 +9,9 @@ senza pubblicità, tutto in locale.
 | Scheda   | Cosa fa |
 |----------|---------|
 | **Oggi** | Pillola del giorno (cambia ogni giorno) su uno sfondo "vivo"; cuore / copia / un'altra. Chip *Come ti senti?* (Ansioso, Insonne, …) che imposta scena + suono + ritmo. Pulsante **Spegni la mente**: un tocco → scena casuale, suono calmante casuale, sessione avviata. |
-| **Respira** | Quadrato del respiro (Inspira → Trattieni → Espira → Trattieni), punto luminoso lungo i lati, quadrato interno che si espande, sfondo che "respira". Lato 3/4/5/6 s, durata 1/3/5/10 min o ∞, vibrazione al cambio fase, **voce guida** (TTS di sistema, it/en) che dice la fase a ogni cambio, schermo sempre acceso, selettore suono in-line. 12 sfondi: 6 scene a **colori** (gradienti animati) + le stesse 6 in versione **foto**. |
-| **Ascolta** | 12 categorie ASMR (Barber, Clean House, Clean Shoes, Rumore bianco, Fuoco, Pioggia, Temporale, Onde, Foresta, Sussurri ITA, Tastiera, Lo-fi), 66 video YouTube verificati come incorporabili. |
-| **Oasi** | Statistiche, card **Offrimi un caffè** (PayPal + mail), pillole salvate, pillole tue, suoni preferiti, video tuoi (incolla un link YouTube), timer di spegnimento, scena preferita, vibrazione, info. |
+| **Respira** | Quadrato del respiro (Inspira → Trattieni → Espira → Trattieni), punto luminoso lungo i lati, quadrato interno che si espande, sfondo che "respira". Lato 3/4/5/6 s, durata 1/3/5/10 min o ∞, metronomo tattile (tic a ogni secondo, colpo ai cambi di fase), **voce guida** (TTS di sistema, it/en) che dice la fase a ogni cambio, schermo sempre acceso, selettore suono in-line. 12 sfondi: 6 scene a **colori** (gradienti animati) + le stesse 6 in versione **foto**. |
+| **Ascolta** | **Mixer di suoni** locali (pioggia, fuoco, vento, rumore bianco/rosa/marrone: sintetizzati con `tool/`, senza copyright, offline e a schermo spento) + 14 categorie ASMR da YouTube (Rumore bianco, Barbiere, Pulizie, Scarpe, Fuoco, Pioggia, Temporale, Onde, Foresta, Sussurri ITA, Tastiera, Pagine di libri, Fusa di gatto, Lo-fi), 102 video verificati come incorporabili. |
+| **Oasi** | Statistiche con calendario delle ultime 4 settimane, card **Offrimi un caffè** (PayPal + mail), pillole salvate, pillole tue, suoni preferiti, video tuoi (incolla un link YouTube), timer di spegnimento, scena preferita, vibrazione, info. |
 
 Il **mini-player** sopra la barra di navigazione contiene l'unico player
 YouTube dell'app: l'audio continua cambiando scheda. Tocca il titolo per
@@ -43,11 +43,15 @@ lib/
   services/asmr_player.dart player YouTube unico + sleep timer
   services/app_scope.dart   InheritedWidget, AppController, SceneImages
   services/youtube_oembed.dart  titolo/canale di un link incollato
-  services/voice_guide.dart     voce guida (flutter_tts)
+  services/voice_guide.dart     voce guida (clip + flutter_tts)
+  services/sound_mixer.dart     mixer di suoni locali (just_audio)
+  config.dart               email, link donazioni
   screens/                  home_shell, oggi, respira, ascolta, oasi
   widgets/                  calm_scene, breathing_box, mini_player, video_tile,
                             asmr_picker, pill_card
 assets/images/              immagini IA delle scene (vedi README lì dentro)
+assets/audio/               clip della voce guida (it/en)
+assets/mixer/               loop del mixer (generati da tool/genera_suoni.py)
 ```
 
 ## Avvio
@@ -77,8 +81,8 @@ già nel manifest.
   background: è una regola di YouTube per i player incorporati. Per l'ascolto
   notturno "a schermo spento" servirebbero file audio royalty-free locali
   (es. Freesound/Pixabay) con `just_audio` + `audio_service`.
-- Un solo suono alla volta (niente mixer): con due WebView YouTube in
-  parallelo la riproduzione non è affidabile su iOS.
+- Un solo video YouTube alla volta: con due WebView in parallelo la
+  riproduzione non è affidabile su iOS. Il mixer locale invece si somma al video.
 - Voce guida, in ordine di preferenza: clip mp3 in `assets/audio/<lang>/`
   (voce neurale o umana — vedi `assets/audio/README.md` e
   `tool/genera_voce.sh`), poi la voce di sistema scelta in *Oasi → Voce
@@ -89,6 +93,8 @@ già nel manifest.
 - Donazioni: `kDonateUrl` usa il pagamento PayPal a importo libero
   (`cmd=_xclick`) perché il flusso "Donate" è riservato alle organizzazioni.
   Un link PayPal.Me è la soluzione più pulita: sostituisci la costante.
+- La richiesta di contributo ("paga quanto vuoi") compare una sola volta, dopo
+  la prima sessione completata. Donazioni ricorrenti: volutamente assenti.
 - Niente notifiche e niente widget home: prossimi passi naturali
   (`flutter_local_notifications`, `home_widget`).
 

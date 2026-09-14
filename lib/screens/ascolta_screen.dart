@@ -6,6 +6,7 @@ import '../models/models.dart';
 import '../services/app_scope.dart';
 import '../services/prefs.dart';
 import '../theme.dart';
+import '../widgets/mixer_sheet.dart';
 import '../widgets/video_tile.dart';
 
 /// Libreria ASMR: griglia di categorie → elenco video. La navigazione è
@@ -96,7 +97,11 @@ class _CategoryGrid extends StatelessWidget {
               ),
             ),
             SliverPadding(
-              padding: const EdgeInsets.fromLTRB(16, 14, 16, 24),
+              padding: const EdgeInsets.fromLTRB(16, 14, 16, 0),
+              sliver: SliverToBoxAdapter(child: _MixerCard(l: l)),
+            ),
+            SliverPadding(
+              padding: const EdgeInsets.fromLTRB(16, 12, 16, 24),
               sliver: SliverGrid(
                 gridDelegate: const SliverGridDelegateWithFixedCrossAxisCount(
                   crossAxisCount: 2,
@@ -118,6 +123,87 @@ class _CategoryGrid extends StatelessWidget {
               ),
             ),
           ],
+        );
+      },
+    );
+  }
+}
+
+/// Card larga in cima alla griglia: apre il mixer di suoni locali.
+class _MixerCard extends StatelessWidget {
+  const _MixerCard({required this.l});
+  final AppLocalizations l;
+
+  @override
+  Widget build(BuildContext context) {
+    final mixer = AppScope.of(context).mixer;
+    return ListenableBuilder(
+      listenable: mixer,
+      builder: (context, _) {
+        return Material(
+          borderRadius: BorderRadius.circular(22),
+          clipBehavior: Clip.antiAlias,
+          child: Ink(
+            decoration: BoxDecoration(
+              gradient: LinearGradient(
+                begin: Alignment.topLeft,
+                end: Alignment.bottomRight,
+                colors: [
+                  AppColors.accent.withValues(alpha: 0.35),
+                  AppColors.accent2.withValues(alpha: 0.3),
+                ],
+              ),
+              border: Border.all(
+                color: AppColors.accent.withValues(alpha: 0.3),
+              ),
+              borderRadius: BorderRadius.circular(22),
+            ),
+            child: InkWell(
+              onTap: () => showMixerSheet(context),
+              child: Padding(
+                padding: const EdgeInsets.fromLTRB(16, 14, 12, 14),
+                child: Row(
+                  children: [
+                    const Icon(Icons.tune, color: Colors.white, size: 28),
+                    const SizedBox(width: 14),
+                    Expanded(
+                      child: Column(
+                        crossAxisAlignment: CrossAxisAlignment.start,
+                        children: [
+                          Text(
+                            l.mixerTitle,
+                            style: const TextStyle(
+                              fontSize: 16,
+                              fontWeight: FontWeight.w600,
+                              color: Colors.white,
+                            ),
+                          ),
+                          const SizedBox(height: 2),
+                          Text(
+                            mixer.isActive
+                                ? mixer.active
+                                      .map((s) => l.mixerSoundName(s.id))
+                                      .join(' · ')
+                                : l.mixerCardDesc,
+                            maxLines: 2,
+                            overflow: TextOverflow.ellipsis,
+                            style: TextStyle(
+                              fontSize: 12.5,
+                              color: Colors.white.withValues(alpha: 0.8),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Icon(
+                      mixer.isActive ? Icons.graphic_eq : Icons.chevron_right,
+                      color: Colors.white,
+                    ),
+                  ],
+                ),
+              ),
+            ),
+          ),
         );
       },
     );

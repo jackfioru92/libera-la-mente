@@ -67,6 +67,17 @@ const List<AsmrCategory> asmrCategorie = [
     colori: [Color(0xFF1F2A2E), Color(0xFF4E7A7C)],
   ),
   AsmrCategory(
+    id: 'pagine',
+    icona: Icons.menu_book,
+    colori: [Color(0xFF3A2E1E), Color(0xFF8A6A3E)],
+  ),
+  AsmrCategory(
+    id: 'gatto',
+    icona: Icons.pets,
+    colori: [Color(0xFF2E2A3A), Color(0xFF7A6A8C)],
+    calmante: true,
+  ),
+  AsmrCategory(
     id: 'lofi',
     icona: Icons.radio,
     colori: [Color(0xFF2A1F3A), Color(0xFF8C4E7A)],
@@ -685,6 +696,330 @@ const List<AsmrVideo> asmrVideos = [
     titolo: LText(
       'synthwave radio 🌌 beats to chill/game to',
       'synthwave radio 🌌 beats to chill/game to',
+    ),
+  ),
+  // Barber (2)
+  AsmrVideo(
+    id: 'd2Sz4h3xLq0',
+    categoriaId: 'barber',
+    autore: 'ASMR Treasury',
+    titolo: LText(
+      'Barbershop: veri suoni di tosatrice, no talking',
+      'Barbershop: real clipper sounds, no talking',
+    ),
+  ),
+  AsmrVideo(
+    id: 'b1w75CSRc8M',
+    categoriaId: 'barber',
+    autore: 'Crisp Cuts ASMR',
+    titolo: LText(
+      'Taglio ultra rilassante: massaggio, forbici, rasoio',
+      'Ultra-relaxing haircut: scalp massage, scissors, razor',
+    ),
+  ),
+  AsmrVideo(
+    id: 'BUJ_mwBUgy0',
+    categoriaId: 'barber',
+    autore: 'DoubleCut Twins ASMR',
+    titolo: LText(
+      'Taper haircut ✂️ veri suoni da barbiere, no talking',
+      'Taper haircut ✂️ real barber sounds, no talking',
+    ),
+  ),
+  AsmrVideo(
+    id: '-1DOOYKTsEo',
+    categoriaId: 'barber',
+    autore: 'HooligansASMR',
+    titolo: LText(
+      '💈 Taglio rilassante dal barbiere, no talking',
+      '💈 Relaxing barber shop haircut, no talking',
+    ),
+  ),
+  AsmrVideo(
+    id: 'kHfA6gzOeq0',
+    categoriaId: 'barber',
+    autore: 'Hermes ASMR',
+    titolo: LText(
+      'Barber ASMR no talking: tapping e taglio',
+      'Barber ASMR no talking: tapping and cutting',
+    ),
+  ),
+  AsmrVideo(
+    id: 'sTR5J6w0TA0',
+    categoriaId: 'barber',
+    autore: 'ASMR Den',
+    titolo: LText(
+      '1 ora di suoni da barbiere, no talking, stereo',
+      '1 hour of barbershop sounds, no talking, stereo',
+    ),
+  ),
+  AsmrVideo(
+    id: 'JEbhH8u_CYg',
+    categoriaId: 'barber',
+    autore: 'Alex Barber ASMR',
+    titolo: LText(
+      'Servizio completo: taglio, barba e lavaggio',
+      'Full barber service: haircut, beard trim & hair wash',
+    ),
+  ),
+  // Clean house (2)
+  AsmrVideo(
+    id: 'FSnoyOQJ4YE',
+    categoriaId: 'casa',
+    autore: "Rebecca's Beautiful ASMR Addiction",
+    titolo: LText(
+      'Extreme clean, no talking: spolverare, spruzzare, lucidare',
+      'Extreme clean, no talking: wiping, dusting, polishing',
+    ),
+  ),
+  AsmrVideo(
+    id: 'I2Bmtu02VeI',
+    categoriaId: 'casa',
+    autore: 'Vacuuming and Cleaning Tips',
+    titolo: LText(
+      'Pulizia del bagno con tanti suoni di sapone',
+      'Bathroom cleaning with lots of soapy sounds',
+    ),
+  ),
+  AsmrVideo(
+    id: 'X7ThJIA-Ffc',
+    categoriaId: 'casa',
+    autore: 'Vacuum Vibe',
+    titolo: LText(
+      'Battiscopa e legno: suoni di panno, no talking',
+      'Baseboard & woodwork wiping sounds, no talking',
+    ),
+  ),
+  AsmrVideo(
+    id: 'RA8DHqSzMqA',
+    categoriaId: 'casa',
+    autore: "Rebecca's Beautiful ASMR Addiction",
+    titolo: LText(
+      'Spolverare e pulire: spray, panno, spazzola',
+      'Dusting & cleaning: spray cans, wiping, brushing',
+    ),
+  ),
+  // Clean shoes (2)
+  AsmrVideo(
+    id: 'ctw7h0xRZmU',
+    categoriaId: 'scarpe',
+    autore: "Peter's ShoeRevive",
+    titolo: LText('Pure shoe shine, no talking', 'Pure shoe shine, no talking'),
+  ),
+  AsmrVideo(
+    id: 'ZBqMqmx5MaY',
+    categoriaId: 'scarpe',
+    autore: 'Paul - The Guy From Vienna',
+    titolo: LText(
+      'Come pulire gli stivali, passo passo, no talking',
+      'How to clean boots, step by step, no talking',
+    ),
+  ),
+  AsmrVideo(
+    id: 'fgGcY9QcH20',
+    categoriaId: 'scarpe',
+    autore: 'wiping stuff ASMR',
+    titolo: LText(
+      'Pulizia e lucidatura delle scarpe da lavoro',
+      'Cleaning & polishing my work shoes',
+    ),
+  ),
+  AsmrVideo(
+    id: 'cGgR7BADuQE',
+    categoriaId: 'scarpe',
+    autore: 'DDAKS Shoe shine ASMR',
+    titolo: LText(
+      'Stivali militari: 1 ora di pulizia e lucidatura',
+      'Military boot shine: 1 hour of cleaning & polishing',
+    ),
+  ),
+  AsmrVideo(
+    id: '0M6JL8SnHFA',
+    categoriaId: 'scarpe',
+    autore: 'TALIA SHINNE REVIVAL',
+    titolo: LText(
+      'Scarpe in pelle: puro restauro, no talking',
+      'Leather shoe cleaning: pure restoration sounds',
+    ),
+  ),
+  AsmrVideo(
+    id: 'MAhoi0c-ulg',
+    categoriaId: 'scarpe',
+    autore: 'TALIA SHINNE REVIVAL',
+    titolo: LText(
+      'Ti addormenterai prima che la scarpa sia pulita 😴',
+      "You'll be asleep before this shoe is clean 😴",
+    ),
+  ),
+  AsmrVideo(
+    id: 'vQFnFa7AU1Q',
+    categoriaId: 'scarpe',
+    autore: "Peter's ShoeRevive",
+    titolo: LText(
+      'Da sporche a specchio: restauro completo',
+      'Dirty to mirror shine: full restoration',
+    ),
+  ),
+  // Sussurri ITA (2)
+  AsmrVideo(
+    id: '3pw42RT9_yA',
+    categoriaId: 'sussurri',
+    autore: 'EL ASMR Ita',
+    titolo: LText(
+      'Per un sonno profondo 💤 sussurri, tongue clicking, tapping',
+      'Deep sleep 💤 whispers, tongue clicking, tapping (ITA)',
+    ),
+  ),
+  AsmrVideo(
+    id: 'czRObEiv3uY',
+    categoriaId: 'sussurri',
+    autore: 'Ale ASMR Therapy',
+    titolo: LText(
+      'Sussurri e carezze sul viso per dormire subito',
+      'Whispers and face touching to fall asleep fast (ITA)',
+    ),
+  ),
+  AsmrVideo(
+    id: '3wmEChnF4dY',
+    categoriaId: 'sussurri',
+    autore: 'Carlotta ASMR',
+    titolo: LText(
+      'Sussurri intensi per te, 45 minuti di relax',
+      'Intense whispers for you, 45 minutes of relaxation (ITA)',
+    ),
+  ),
+  AsmrVideo(
+    id: 'MXsyt1qHbag',
+    categoriaId: 'sussurri',
+    autore: 'EL ASMR',
+    titolo: LText(
+      '💖 Sussurri nelle tue orecchie + mic scratching',
+      '💖 Whispers in your ears + mic scratching (ITA)',
+    ),
+  ),
+  AsmrVideo(
+    id: 'kkqccDx0KAc',
+    categoriaId: 'sussurri',
+    autore: 'Chiara ASMR',
+    titolo: LText(
+      "Un'ora e 14 trigger per farti dormire",
+      'One hour and 14 triggers to make you sleep (ITA)',
+    ),
+  ),
+  // Pagine di libri
+  AsmrVideo(
+    id: 'j-jdcJaRYcM',
+    categoriaId: 'pagine',
+    autore: 'TheASMRGirl',
+    titolo: LText(
+      'Sfogliare un libro, no talking',
+      'Book page turning, no talking',
+    ),
+  ),
+  AsmrVideo(
+    id: 'YIumDOcSPT4',
+    categoriaId: 'pagine',
+    autore: 'Maxence Rodier ASMR',
+    titolo: LText(
+      'Pagine di libri antichi che scricchiolano 📖',
+      'Crinkly old books page turning 📖',
+    ),
+  ),
+  AsmrVideo(
+    id: 'xthg-1Y4R3E',
+    categoriaId: 'pagine',
+    autore: 'TheASMRGirl',
+    titolo: LText(
+      'Sfogliare lentamente, no talking',
+      'Slow book page turning, no talking',
+    ),
+  ),
+  AsmrVideo(
+    id: 's2Z5rdu_2ME',
+    categoriaId: 'pagine',
+    autore: 'Just Paper ASMR',
+    titolo: LText(
+      'Pagine sottili: suoni di carta per dormire e studiare',
+      'Thin page turning: paper sounds for sleep & study',
+    ),
+  ),
+  AsmrVideo(
+    id: 'UgcqREaVFcg',
+    categoriaId: 'pagine',
+    autore: 'Mia Lasswell',
+    titolo: LText(
+      'Suoni di pagine girate, relax profondo',
+      'Page turning sounds, deep relaxation',
+    ),
+  ),
+  AsmrVideo(
+    id: 'QE2ErXN3grA',
+    categoriaId: 'pagine',
+    autore: 'Maxence Rodier ASMR',
+    titolo: LText(
+      'Libri antichi in libreria, 1 ora',
+      'Crinkly antique books in a bookshop, 1 hour',
+    ),
+  ),
+  AsmrVideo(
+    id: 'A2MVpzcIPJo',
+    categoriaId: 'pagine',
+    autore: 'TheASMRGirl',
+    titolo: LText(
+      'Sfogliare accanto al fuoco, no talking',
+      'Page turning next to fire, no talking',
+    ),
+  ),
+  // Fusa di gatto
+  AsmrVideo(
+    id: 'HRxp-IWVu7Y',
+    categoriaId: 'gatto',
+    autore: 'TMSOFT',
+    titolo: LText(
+      'Fusa di gatto, 10 ore, schermo nero',
+      'Cat purring, 10 hours, black screen',
+    ),
+  ),
+  AsmrVideo(
+    id: 'cqlPHCc7xYo',
+    categoriaId: 'gatto',
+    autore: 'Calming Audio',
+    titolo: LText('Fusa di gatto per 10 ore', 'Cat purring sound for 10 hours'),
+  ),
+  AsmrVideo(
+    id: 'j4_3HJmXOFk',
+    categoriaId: 'gatto',
+    autore: 'Relaxing White Noise',
+    titolo: LText(
+      'Fusa 🐱 con rumore bianco, 10 ore',
+      'Cat purring 🐱 with white noise, 10 hours',
+    ),
+  ),
+  AsmrVideo(
+    id: 'gL6zxsQMC5A',
+    categoriaId: 'gatto',
+    autore: 'Moonlight Aura Vibes',
+    titolo: LText(
+      'Fusa, 10 ore, schermo nero',
+      'Cat purring, 10 hours, black screen',
+    ),
+  ),
+  AsmrVideo(
+    id: 'DF_RF3q6tAU',
+    categoriaId: 'gatto',
+    autore: 'Soothing Sounds for Sleep',
+    titolo: LText(
+      'Fusa, 10 ore: relax, studio, calma',
+      'Cat purring, 10 hours: relax, study, calm',
+    ),
+  ),
+  AsmrVideo(
+    id: 'EpqyaFrzYvI',
+    categoriaId: 'gatto',
+    autore: 'Relaxing Sounds',
+    titolo: LText(
+      'Gatto che fa le fusa, 10 ore, sonno profondo',
+      'Purring cat, 10 hours, deep sleep',
     ),
   ),
 ];

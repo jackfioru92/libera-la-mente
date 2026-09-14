@@ -11,7 +11,10 @@ import 'screens/home_shell.dart';
 import 'services/app_scope.dart';
 import 'services/asmr_player.dart';
 import 'services/prefs.dart';
+import 'services/sound_mixer.dart';
 import 'services/voice_guide.dart';
+import 'widgets/mixer_sheet.dart';
+import 'widgets/support_sheet.dart';
 import 'theme.dart';
 
 Future<void> main() async {
@@ -52,11 +55,18 @@ class CalmaApp extends StatefulWidget {
 class _CalmaAppState extends State<CalmaApp> {
   final _player = AsmrPlayer();
   final _nav = AppController();
+  final _navKey = GlobalKey<NavigatorState>();
   late final _voice = VoiceGuide(assets: widget.voiceAssets);
+  late final _mixer = SoundMixer(
+    loadVolumes: () => SoundMixer.decodeVolumes(widget.prefs.mixerVolumesRaw),
+    saveVolumes: (v) =>
+        widget.prefs.setMixerVolumesRaw(SoundMixer.encodeVolumes(v)),
+  );
 
   @override
   void initState() {
     super.initState();
+    _player.onSleep = _mixer.stop;
     _applyDemoEnv();
   }
 
@@ -81,6 +91,19 @@ class _CalmaAppState extends State<CalmaApp> {
     if (lang is String) widget.prefs.setLanguageCode(lang);
     final scene = demo['scene'];
     if (scene is String) widget.prefs.setSceneId(scene);
+    final preset = demo['mixer'];
+    if (preset is String) _mixer.applyPreset(preset);
+    final sheet = demo['sheet'];
+    if (sheet is String) {
+      WidgetsBinding.instance.addPostFrameCallback((_) {
+        Future<void>.delayed(const Duration(milliseconds: 600), () {
+          final ctx = _navKey.currentContext;
+          if (ctx == null || !ctx.mounted) return;
+          if (sheet == 'mixer') showMixerSheet(ctx);
+          if (sheet == 'support') showSupportSheet(ctx);
+        });
+      });
+    }
     final voice = demo['voice'];
     if (voice is bool) widget.prefs.setVoiceGuide(voice);
     final videoId = demo['video'] as String?;
@@ -100,6 +123,7 @@ class _CalmaAppState extends State<CalmaApp> {
     _player.dispose();
     _nav.dispose();
     _voice.dispose();
+    _mixer.dispose();
     super.dispose();
   }
 
@@ -111,12 +135,14 @@ class _CalmaAppState extends State<CalmaApp> {
       nav: _nav,
       images: widget.images,
       voice: _voice,
+      mixer: _mixer,
       child: ListenableBuilder(
         listenable: widget.prefs,
         builder: (context, _) {
           final code = widget.prefs.languageCode;
           return MaterialApp(
             onGenerateTitle: (context) => AppLocalizations.of(context).appName,
+            navigatorKey: _navKey,
             debugShowCheckedModeBanner: false,
             theme: buildTheme(),
             locale: code.isEmpty ? null : Locale(code),

@@ -22,6 +22,9 @@ class AsmrPlayer extends ChangeNotifier {
   Timer? _sleepTimer;
   DateTime? sleepEndsAt;
 
+  /// Chiamato allo scadere del timer di spegnimento (es. per fermare il mixer).
+  VoidCallback? onSleep;
+
   bool get hasVideo => _controller != null && current != null;
   bool get isPlaying =>
       state == PlayerState.playing || state == PlayerState.buffering;
@@ -105,6 +108,7 @@ class AsmrPlayer extends ChangeNotifier {
     _sleepTimer = Timer(Duration(minutes: minutes), () async {
       sleepEndsAt = null;
       await _controller?.pauseVideo();
+      onSleep?.call();
       notifyListeners();
     });
     notifyListeners();

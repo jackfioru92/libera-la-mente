@@ -27,6 +27,8 @@ extension L10nData on AppLocalizations {
     'sussurri' => catWhispers,
     'tastiera' => catKeyboard,
     'lofi' => catLofi,
+    'pagine' => catPages,
+    'gatto' => catCat,
     _ => catMine,
   };
 
@@ -43,6 +45,8 @@ extension L10nData on AppLocalizations {
     'sussurri' => catWhispersDesc,
     'tastiera' => catKeyboardDesc,
     'lofi' => catLofiDesc,
+    'pagine' => catPagesDesc,
+    'gatto' => catCatDesc,
     _ => catMineDesc,
   };
 
@@ -62,6 +66,22 @@ extension L10nData on AppLocalizations {
     'agitato' => moodRestless,
     'giu' => moodLow,
     _ => moodDistracted,
+  };
+
+  String mixerSoundName(String id) => switch (id) {
+    'pioggia' => mixerRain,
+    'fuoco' => mixerFire,
+    'vento' => mixerWind,
+    'bianco' => mixerWhite,
+    'rosa' => mixerPink,
+    _ => mixerBrown,
+  };
+
+  String mixerPresetName(String id) => switch (id) {
+    'notte' => presetNightRain,
+    'camino' => presetFireplace,
+    'sonno' => presetDeepSleep,
+    _ => presetStorm,
   };
 
   /// Fasi della respirazione quadrata nell'ordine dei lati.

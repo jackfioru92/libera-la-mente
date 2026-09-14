@@ -13,6 +13,79 @@ class AppLocalizationsIt extends AppLocalizations {
   String get appName => 'Libera la Mente';
 
   @override
+  String get mixerTitle => 'Mixer di suoni';
+
+  @override
+  String get mixerSubtitle =>
+      'Suoni generati, senza copyright: funzionano offline e a schermo spento, anche insieme a un video.';
+
+  @override
+  String get mixerCardDesc =>
+      'Pioggia, fuoco, vento, rumore bianco: crea il tuo sottofondo';
+
+  @override
+  String get mixerClear => 'Azzera';
+
+  @override
+  String get mixerPlay => 'Avvia il mixer';
+
+  @override
+  String get mixerStop => 'Ferma il mixer';
+
+  @override
+  String get mixerActive => 'Mixer attivo';
+
+  @override
+  String get mixerRain => 'Pioggia';
+
+  @override
+  String get mixerFire => 'Fuoco';
+
+  @override
+  String get mixerWind => 'Vento';
+
+  @override
+  String get mixerWhite => 'Rumore bianco';
+
+  @override
+  String get mixerPink => 'Rumore rosa';
+
+  @override
+  String get mixerBrown => 'Rumore marrone';
+
+  @override
+  String get presetNightRain => 'Pioggia notturna';
+
+  @override
+  String get presetFireplace => 'Camino';
+
+  @override
+  String get presetDeepSleep => 'Sonno profondo';
+
+  @override
+  String get presetStorm => 'Temporale';
+
+  @override
+  String get supportTitle => 'Ti è stato utile?';
+
+  @override
+  String get welcomeTagline =>
+      'Un minuto per calmare la mente: respiro quadrato, una pillola al giorno, suoni per dormire.';
+
+  @override
+  String get welcomeIndie =>
+      'Libera la Mente è un progetto indipendente, fatto da una persona sola. È gratis, per sempre, senza pubblicità né account, e lo resterà. Se ti fa bene, un piccolo contributo — quanto vuoi tu — aiuta a coprire i costi. Se no, va benissimo lo stesso.';
+
+  @override
+  String get continueFree => 'Continua gratis';
+
+  @override
+  String get last4Weeks => 'Ultime 4 settimane';
+
+  @override
+  String get weekdayLetters => 'LMMGVSD';
+
+  @override
   String get tabToday => 'Oggi';
 
   @override
@@ -249,6 +322,18 @@ class AppLocalizationsIt extends AppLocalizations {
 
   @override
   String get catKeyboardDesc => 'Tasti meccanici, tapping lento';
+
+  @override
+  String get catPages => 'Pagine di libri';
+
+  @override
+  String get catPagesDesc => 'Carta che si sfoglia, libri antichi';
+
+  @override
+  String get catCat => 'Fusa di gatto';
+
+  @override
+  String get catCatDesc => 'Un gatto che fa le fusa, per ore';
 
   @override
   String get catLofi => 'Lo-fi radio';

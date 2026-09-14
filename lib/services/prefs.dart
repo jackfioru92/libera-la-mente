@@ -27,6 +27,9 @@ class AppPrefs extends ChangeNotifier {
   static const _kHaptics = 'haptics';
   static const _kLang = 'language';
   static const _kVoice = 'voice_guide';
+  static const _kMixer = 'mixer_volumes';
+  static const _kDays = 'session_days';
+  static const _kSupport = 'support_asked';
 
   static Future<AppPrefs> load() async {
     final p = await SharedPreferences.getInstance();
@@ -140,6 +143,22 @@ class AppPrefs extends ChangeNotifier {
   bool get haptics => _p.getBool(_kHaptics) ?? true;
   bool get voiceGuide => _p.getBool(_kVoice) ?? true;
 
+  String? get mixerVolumesRaw => _p.getString(_kMixer);
+  Future<void> setMixerVolumesRaw(String raw) => _p.setString(_kMixer, raw);
+
+  /// True dopo aver mostrato, una volta, la richiesta di contributo.
+  bool get supportAsked => _p.getBool(_kSupport) ?? false;
+
+  Future<void> setSupportAsked() async {
+    await _p.setBool(_kSupport, true);
+    notifyListeners();
+  }
+
+  /// Giorni (yyyy-MM-dd) con almeno una sessione: per il calendario.
+  Set<String> get sessionDays => (_p.getStringList(_kDays) ?? const []).toSet();
+
+  static String dayKey(DateTime d) => _dayKey(d);
+
   /// Voce di sistema scelta per una lingua ('' = automatica).
   String voiceId(String lang) => _p.getString('voice_id_$lang') ?? '';
 
@@ -208,6 +227,8 @@ class AppPrefs extends ChangeNotifier {
     await _p.setInt(_kTotMinutes, totalMinutes + minutes);
     await _p.setInt(_kStreak, streak);
     await _p.setString(_kLastDay, todayKey);
+    final days = sessionDays..add(todayKey);
+    await _p.setStringList(_kDays, days.toList()..sort());
     notifyListeners();
   }
 }

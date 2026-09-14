@@ -104,6 +104,144 @@ abstract class AppLocalizations {
   /// **'Libera la Mente'**
   String get appName;
 
+  /// No description provided for @mixerTitle.
+  ///
+  /// In it, this message translates to:
+  /// **'Mixer di suoni'**
+  String get mixerTitle;
+
+  /// No description provided for @mixerSubtitle.
+  ///
+  /// In it, this message translates to:
+  /// **'Suoni generati, senza copyright: funzionano offline e a schermo spento, anche insieme a un video.'**
+  String get mixerSubtitle;
+
+  /// No description provided for @mixerCardDesc.
+  ///
+  /// In it, this message translates to:
+  /// **'Pioggia, fuoco, vento, rumore bianco: crea il tuo sottofondo'**
+  String get mixerCardDesc;
+
+  /// No description provided for @mixerClear.
+  ///
+  /// In it, this message translates to:
+  /// **'Azzera'**
+  String get mixerClear;
+
+  /// No description provided for @mixerPlay.
+  ///
+  /// In it, this message translates to:
+  /// **'Avvia il mixer'**
+  String get mixerPlay;
+
+  /// No description provided for @mixerStop.
+  ///
+  /// In it, this message translates to:
+  /// **'Ferma il mixer'**
+  String get mixerStop;
+
+  /// No description provided for @mixerActive.
+  ///
+  /// In it, this message translates to:
+  /// **'Mixer attivo'**
+  String get mixerActive;
+
+  /// No description provided for @mixerRain.
+  ///
+  /// In it, this message translates to:
+  /// **'Pioggia'**
+  String get mixerRain;
+
+  /// No description provided for @mixerFire.
+  ///
+  /// In it, this message translates to:
+  /// **'Fuoco'**
+  String get mixerFire;
+
+  /// No description provided for @mixerWind.
+  ///
+  /// In it, this message translates to:
+  /// **'Vento'**
+  String get mixerWind;
+
+  /// No description provided for @mixerWhite.
+  ///
+  /// In it, this message translates to:
+  /// **'Rumore bianco'**
+  String get mixerWhite;
+
+  /// No description provided for @mixerPink.
+  ///
+  /// In it, this message translates to:
+  /// **'Rumore rosa'**
+  String get mixerPink;
+
+  /// No description provided for @mixerBrown.
+  ///
+  /// In it, this message translates to:
+  /// **'Rumore marrone'**
+  String get mixerBrown;
+
+  /// No description provided for @presetNightRain.
+  ///
+  /// In it, this message translates to:
+  /// **'Pioggia notturna'**
+  String get presetNightRain;
+
+  /// No description provided for @presetFireplace.
+  ///
+  /// In it, this message translates to:
+  /// **'Camino'**
+  String get presetFireplace;
+
+  /// No description provided for @presetDeepSleep.
+  ///
+  /// In it, this message translates to:
+  /// **'Sonno profondo'**
+  String get presetDeepSleep;
+
+  /// No description provided for @presetStorm.
+  ///
+  /// In it, this message translates to:
+  /// **'Temporale'**
+  String get presetStorm;
+
+  /// No description provided for @supportTitle.
+  ///
+  /// In it, this message translates to:
+  /// **'Ti è stato utile?'**
+  String get supportTitle;
+
+  /// No description provided for @welcomeTagline.
+  ///
+  /// In it, this message translates to:
+  /// **'Un minuto per calmare la mente: respiro quadrato, una pillola al giorno, suoni per dormire.'**
+  String get welcomeTagline;
+
+  /// No description provided for @welcomeIndie.
+  ///
+  /// In it, this message translates to:
+  /// **'Libera la Mente è un progetto indipendente, fatto da una persona sola. È gratis, per sempre, senza pubblicità né account, e lo resterà. Se ti fa bene, un piccolo contributo — quanto vuoi tu — aiuta a coprire i costi. Se no, va benissimo lo stesso.'**
+  String get welcomeIndie;
+
+  /// No description provided for @continueFree.
+  ///
+  /// In it, this message translates to:
+  /// **'Continua gratis'**
+  String get continueFree;
+
+  /// No description provided for @last4Weeks.
+  ///
+  /// In it, this message translates to:
+  /// **'Ultime 4 settimane'**
+  String get last4Weeks;
+
+  /// No description provided for @weekdayLetters.
+  ///
+  /// In it, this message translates to:
+  /// **'LMMGVSD'**
+  String get weekdayLetters;
+
   /// No description provided for @tabToday.
   ///
   /// In it, this message translates to:
@@ -535,6 +673,30 @@ abstract class AppLocalizations {
   /// In it, this message translates to:
   /// **'Tasti meccanici, tapping lento'**
   String get catKeyboardDesc;
+
+  /// No description provided for @catPages.
+  ///
+  /// In it, this message translates to:
+  /// **'Pagine di libri'**
+  String get catPages;
+
+  /// No description provided for @catPagesDesc.
+  ///
+  /// In it, this message translates to:
+  /// **'Carta che si sfoglia, libri antichi'**
+  String get catPagesDesc;
+
+  /// No description provided for @catCat.
+  ///
+  /// In it, this message translates to:
+  /// **'Fusa di gatto'**
+  String get catCat;
+
+  /// No description provided for @catCatDesc.
+  ///
+  /// In it, this message translates to:
+  /// **'Un gatto che fa le fusa, per ore'**
+  String get catCatDesc;
 
   /// No description provided for @catLofi.
   ///

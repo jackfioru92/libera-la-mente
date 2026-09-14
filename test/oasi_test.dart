@@ -1,8 +1,10 @@
+import 'package:calma_la_mente/config.dart';
 import 'package:calma_la_mente/l10n/app_localizations.dart';
 import 'package:calma_la_mente/screens/oasi_screen.dart';
 import 'package:calma_la_mente/services/app_scope.dart';
 import 'package:calma_la_mente/services/asmr_player.dart';
 import 'package:calma_la_mente/services/prefs.dart';
+import 'package:calma_la_mente/services/sound_mixer.dart';
 import 'package:calma_la_mente/services/voice_guide.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_test/flutter_test.dart';
@@ -22,6 +24,7 @@ void main() {
         nav: AppController(),
         images: const SceneImages.none(),
         voice: VoiceGuide(),
+        mixer: SoundMixer(loadVolumes: () => null, saveVolumes: (_) {}),
         child: const MaterialApp(
           locale: Locale('it'),
           supportedLocales: AppLocalizations.supportedLocales,

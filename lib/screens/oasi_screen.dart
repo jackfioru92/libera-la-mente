@@ -5,6 +5,7 @@ import 'package:url_launcher/url_launcher.dart';
 
 import '../data/asmr_catalog.dart';
 import '../data/pillole.dart';
+import '../config.dart';
 import '../data/scenes.dart';
 import '../l10n/l10n_ext.dart';
 import '../models/models.dart';
@@ -16,24 +17,6 @@ import '../theme.dart';
 import '../widgets/calm_scene.dart';
 import '../widgets/pill_card.dart';
 import '../widgets/video_tile.dart';
-
-/// Email dell'autore: usata per le donazioni PayPal e per il contatto.
-const String kContactEmail = 'fgiacomo92@gmail.com';
-
-/// Link "offrimi un caffè".
-///
-/// Il flusso PayPal "Donate" (`/donate/?business=...`) è riservato alle
-/// organizzazioni: con un conto personale mostra "l'organizzazione non può
-/// accettare donazioni". Qui si usa il pagamento classico a importo libero,
-/// che i conti personali accettano. Se crei un link PayPal.Me (paypal.me),
-/// sostituisci l'intera stringa con `https://paypal.me/<tuonome>`.
-final String kDonateUrl = Uri.https('www.paypal.com', '/cgi-bin/webscr', {
-  'cmd': '_xclick',
-  'business': kContactEmail,
-  'currency_code': 'EUR',
-  'item_name': 'Un caffè per Libera la Mente',
-  'no_shipping': '1',
-}).toString();
 
 /// Lingue selezionabili in Oasi: codice → nome nella lingua stessa.
 const Map<String, String> kLanguageNames = {'it': 'Italiano', 'en': 'English'};
@@ -673,26 +656,114 @@ class _StatsCard extends StatelessWidget {
       ),
     );
     return Container(
-      padding: const EdgeInsets.symmetric(vertical: 18),
+      padding: const EdgeInsets.fromLTRB(16, 18, 16, 14),
       decoration: BoxDecoration(
         color: AppColors.surface,
         borderRadius: BorderRadius.circular(22),
       ),
-      child: Row(
+      child: Column(
         children: [
-          stat(
-            '${prefs.totalSessions}',
-            l.statSessions,
-            Icons.self_improvement,
+          Row(
+            children: [
+              stat(
+                '${prefs.totalSessions}',
+                l.statSessions,
+                Icons.self_improvement,
+              ),
+              stat(
+                '${prefs.totalMinutes}',
+                l.statMinutes,
+                Icons.timer_outlined,
+              ),
+              stat(
+                '${prefs.streak}',
+                l.statStreak,
+                Icons.local_fire_department_outlined,
+              ),
+            ],
           ),
-          stat('${prefs.totalMinutes}', l.statMinutes, Icons.timer_outlined),
-          stat(
-            '${prefs.streak}',
-            l.statStreak,
-            Icons.local_fire_department_outlined,
-          ),
+          const SizedBox(height: 16),
+          _StreakCalendar(days: prefs.sessionDays),
         ],
       ),
+    );
+  }
+}
+
+/// Ultime 4 settimane: un pallino per giorno, pieno se c'è stata una sessione.
+class _StreakCalendar extends StatelessWidget {
+  const _StreakCalendar({required this.days});
+  final Set<String> days;
+
+  @override
+  Widget build(BuildContext context) {
+    final l = context.l10n;
+    final now = DateTime.now();
+    final today = DateTime(now.year, now.month, now.day);
+    // Griglia allineata al lunedì: 4 settimane che finiscono con quella corrente.
+    final thisMonday = today.subtract(Duration(days: today.weekday - 1));
+    final start = thisMonday.subtract(const Duration(days: 21));
+    final letters = l.weekdayLetters;
+    Widget dot(DateTime day) {
+      final future = day.isAfter(today);
+      final done = days.contains(AppPrefs.dayKey(day));
+      return Container(
+        width: 18,
+        height: 18,
+        decoration: BoxDecoration(
+          shape: BoxShape.circle,
+          color: done
+              ? AppColors.accent
+              : AppColors.surface2.withValues(alpha: future ? 0.35 : 1),
+          border: day == today
+              ? Border.all(color: AppColors.accent, width: 1.5)
+              : null,
+        ),
+      );
+    }
+
+    return Column(
+      children: [
+        Row(
+          children: [
+            Text(
+              l.last4Weeks,
+              style: const TextStyle(color: AppColors.muted, fontSize: 12),
+            ),
+          ],
+        ),
+        const SizedBox(height: 8),
+        Row(
+          children: [
+            for (var i = 0; i < 7; i++)
+              Expanded(
+                child: Center(
+                  child: Text(
+                    letters[i],
+                    style: const TextStyle(
+                      color: AppColors.muted,
+                      fontSize: 11,
+                    ),
+                  ),
+                ),
+              ),
+          ],
+        ),
+        for (var w = 0; w < 4; w++)
+          Padding(
+            padding: const EdgeInsets.only(top: 6),
+            child: Row(
+              children: [
+                for (var d = 0; d < 7; d++)
+                  Expanded(
+                    child: Center(
+                      child: dot(start.add(Duration(days: w * 7 + d))),
+                    ),
+                  ),
+              ],
+            ),
+          ),
+      ],
     );
   }
 }

@@ -13,6 +13,7 @@ import '../theme.dart';
 import '../widgets/asmr_picker.dart';
 import '../widgets/breathing_box.dart';
 import '../widgets/calm_scene.dart';
+import '../widgets/support_sheet.dart';
 
 class RespiraScreen extends StatefulWidget {
   const RespiraScreen({super.key});
@@ -65,15 +66,34 @@ class _RespiraScreenState extends State<RespiraScreen>
     }
   }
 
+  int _lastSecond = -1;
+
+  /// Vibrazioni per respirare a occhi chiusi: un colpo deciso a Inspira ed
+  /// Espira, un doppio tocco ai Trattieni, e un tic leggero a ogni secondo
+  /// durante inspirazione ed espirazione (il "conteggio" nel palmo).
+  Future<void> _hapticPhase(int phase) async {
+    if (phase == 1 || phase == 3) {
+      await HapticFeedback.mediumImpact();
+      await Future<void>.delayed(const Duration(milliseconds: 130));
+      await HapticFeedback.mediumImpact();
+    } else {
+      await HapticFeedback.heavyImpact();
+    }
+  }
+
   void _tick() {
     final s = breathState(_ctrl.value);
-    if (s.phase != _phase) {
-      final prefs = _scope!.prefs;
-      if (prefs.haptics) {
-        s.phase == 0
-            ? HapticFeedback.heavyImpact()
-            : HapticFeedback.mediumImpact();
+    final prefs = _scope!.prefs;
+    if (prefs.haptics && (s.phase == 0 || s.phase == 2)) {
+      final second = (s.progress * prefs.sideSeconds).floor();
+      if (second != _lastSecond) {
+        _lastSecond = second;
+        if (second > 0) HapticFeedback.selectionClick();
       }
+    }
+    if (s.phase != _phase) {
+      _lastSecond = -1;
+      if (prefs.haptics) _hapticPhase(s.phase);
       if (prefs.voiceGuide) {
         _scope!.voice.say(_phaseKeys[s.phase], context.l10n.phases[s.phase]);
       }
@@ -162,6 +182,12 @@ class _RespiraScreenState extends State<RespiraScreen>
           ],
         ),
       );
+      // Dopo la prima sessione completa, e solo una volta: l'app è stata
+      // provata davvero, ora ha senso raccontare che è un progetto indipendente.
+      if (mounted && !_scope!.prefs.supportAsked) {
+        await _scope!.prefs.setSupportAsked();
+        if (mounted) await showSupportSheet(context);
+      }
     }
   }
 
@@ -265,42 +291,51 @@ class _RespiraScreenState extends State<RespiraScreen>
                   ),
                   // --------------------------------------------- quadrato
                   Expanded(
-                    child: Center(
-                      child: AnimatedBuilder(
-                        animation: _ctrl,
-                        builder: (_, _) {
-                          final s = breathState(_ctrl.value);
-                          final secondsLeft = (side - s.progress * side)
-                              .ceil()
-                              .clamp(1, side);
-                          final size = math.min(
-                            MediaQuery.sizeOf(context).width - 80,
-                            300.0,
-                          );
-                          return Column(
-                            mainAxisSize: MainAxisSize.min,
-                            children: [
-                              BreathingBox(
-                                phase: s.phase,
-                                phaseProgress: s.progress,
-                                breath: _running ? s.breath : 0.2,
-                                secondsLeft: secondsLeft,
-                                running: _running,
-                                label: _running ? l.phases[s.phase] : l.ready,
-                                size: size,
-                              ),
-                              const SizedBox(height: 8),
-                              Text(
-                                _statusLine(l, prefs.sessionMinutes),
-                                style: const TextStyle(
-                                  color: AppColors.muted,
-                                  fontSize: 13,
-                                  letterSpacing: 0.5,
+                    child: LayoutBuilder(
+                      builder: (context, constraints) => Center(
+                        child: AnimatedBuilder(
+                          animation: _ctrl,
+                          builder: (_, _) {
+                            final s = breathState(_ctrl.value);
+                            final secondsLeft = (side - s.progress * side)
+                                .ceil()
+                                .clamp(1, side);
+                            // Si adatta all'altezza libera: con mini-player e
+                            // mixer aperti il quadrato si rimpicciolisce.
+                            final size = math
+                                .min(
+                                  math.min(
+                                    MediaQuery.sizeOf(context).width - 80,
+                                    constraints.maxHeight - 56,
+                                  ),
+                                  300.0,
+                                )
+                                .clamp(140.0, 300.0);
+                            return Column(
+                              mainAxisSize: MainAxisSize.min,
+                              children: [
+                                BreathingBox(
+                                  phase: s.phase,
+                                  phaseProgress: s.progress,
+                                  breath: _running ? s.breath : 0.2,
+                                  secondsLeft: secondsLeft,
+                                  running: _running,
+                                  label: _running ? l.phases[s.phase] : l.ready,
+                                  size: size,
                                 ),
-                              ),
-                            ],
-                          );
-                        },
+                                const SizedBox(height: 8),
+                                Text(
+                                  _statusLine(l, prefs.sessionMinutes),
+                                  style: const TextStyle(
+                                    color: AppColors.muted,
+                                    fontSize: 13,
+                                    letterSpacing: 0.5,
+                                  ),
+                                ),
+                              ],
+                            );
+                          },
+                        ),
                       ),
                     ),
                   ),

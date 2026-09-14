@@ -34,5 +34,10 @@ Salute e fitness
 ## Tag suggeriti
 meditazione, respirazione, ansia, sonno, ASMR, rilassamento, mindfulness
 
-## Note di rilascio (v1.0.0)
-Prima versione: respirazione quadrata con voce guida, pillole del giorno, ASMR da YouTube in 12 categorie, scene a colori e con immagini, statistiche e preferiti. Italiano e inglese.
+## Note di rilascio (v1.1.0)
+Novità 1.1:
+• Mixer di suoni: pioggia, fuoco, vento, rumore bianco/rosa/marrone, senza copyright, anche a schermo spento e insieme a un video
+• Metronomo tattile: un tocco a ogni secondo di Inspira ed Espira, per respirare a occhi chiusi
+• Calendario delle ultime 4 settimane in Oasi
+• 36 nuovi video ASMR e due categorie: Pagine di libri, Fusa di gatto
+• 26 nuove pillole (Marco Aurelio, Seneca, Lao Tzu, Puddicombe…)

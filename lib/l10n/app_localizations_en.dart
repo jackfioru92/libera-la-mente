@@ -13,6 +13,79 @@ class AppLocalizationsEn extends AppLocalizations {
   String get appName => 'Libera la Mente';
 
   @override
+  String get mixerTitle => 'Sound mixer';
+
+  @override
+  String get mixerSubtitle =>
+      'Generated, copyright-free sounds: they work offline and with the screen off, even alongside a video.';
+
+  @override
+  String get mixerCardDesc =>
+      'Rain, fire, wind, white noise: build your own background';
+
+  @override
+  String get mixerClear => 'Reset';
+
+  @override
+  String get mixerPlay => 'Start mixer';
+
+  @override
+  String get mixerStop => 'Stop mixer';
+
+  @override
+  String get mixerActive => 'Mixer on';
+
+  @override
+  String get mixerRain => 'Rain';
+
+  @override
+  String get mixerFire => 'Fire';
+
+  @override
+  String get mixerWind => 'Wind';
+
+  @override
+  String get mixerWhite => 'White noise';
+
+  @override
+  String get mixerPink => 'Pink noise';
+
+  @override
+  String get mixerBrown => 'Brown noise';
+
+  @override
+  String get presetNightRain => 'Night rain';
+
+  @override
+  String get presetFireplace => 'Fireplace';
+
+  @override
+  String get presetDeepSleep => 'Deep sleep';
+
+  @override
+  String get presetStorm => 'Storm';
+
+  @override
+  String get supportTitle => 'Was this helpful?';
+
+  @override
+  String get welcomeTagline =>
+      'One minute to calm your mind: box breathing, a daily pill, sounds for sleep.';
+
+  @override
+  String get welcomeIndie =>
+      'Libera la Mente is an independent project, made by one person. It is free, forever, with no ads and no account, and it will stay that way. If it does you good, a small contribution — whatever you like — helps cover the costs. If not, that is perfectly fine too.';
+
+  @override
+  String get continueFree => 'Continue for free';
+
+  @override
+  String get last4Weeks => 'Last 4 weeks';
+
+  @override
+  String get weekdayLetters => 'MTWTFSS';
+
+  @override
   String get tabToday => 'Today';
 
   @override
@@ -249,6 +322,18 @@ class AppLocalizationsEn extends AppLocalizations {
 
   @override
   String get catKeyboardDesc => 'Mechanical keys, slow tapping';
+
+  @override
+  String get catPages => 'Book pages';
+
+  @override
+  String get catPagesDesc => 'Turning paper, antique books';
+
+  @override
+  String get catCat => 'Cat purring';
+
+  @override
+  String get catCatDesc => 'A cat purring, for hours';
 
   @override
   String get catLofi => 'Lo-fi radio';

@@ -5,6 +5,7 @@ import '../l10n/l10n_ext.dart';
 import '../models/models.dart';
 import '../services/app_scope.dart';
 import '../theme.dart';
+import 'mixer_sheet.dart';
 import 'video_tile.dart';
 
 /// Bottom sheet per scegliere un suono senza lasciare la schermata Respira.
@@ -74,10 +75,24 @@ class _AsmrPickerSheetState extends State<_AsmrPickerSheet> {
               child: ListView.separated(
                 scrollDirection: Axis.horizontal,
                 padding: const EdgeInsets.symmetric(horizontal: 16),
-                itemCount: categorie.length,
+                itemCount: categorie.length + 1,
                 separatorBuilder: (_, _) => const SizedBox(width: 8),
                 itemBuilder: (_, i) {
-                  final c = categorie[i];
+                  if (i == 0) {
+                    return ActionChip(
+                      avatar: const Icon(
+                        Icons.tune,
+                        size: 16,
+                        color: AppColors.accent,
+                      ),
+                      label: Text(context.l10n.mixerTitle),
+                      onPressed: () {
+                        Navigator.of(context).pop();
+                        showMixerSheet(context);
+                      },
+                    );
+                  }
+                  final c = categorie[i - 1];
                   return ChoiceChip(
                     label: Text(context.l10n.categoryName(c.id)),
                     avatar: Icon(c.icona, size: 16),

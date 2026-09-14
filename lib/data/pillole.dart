@@ -617,6 +617,315 @@ const List<Pillola> pillole = [
       'Happiness isn\'t ready-made somewhere: it comes from what you do, one act at a time.',
     ),
   ),
+  // ------------------------------------------------------------ originali (2)
+  Pillola(
+    id: 'o25',
+    tema: 'respiro',
+    testo: LText(
+      'Il respiro è l\'unica cosa che fai da quando sei nato. Sai già come si fa.',
+      'Breathing is the one thing you have done since the day you were born. You already know how.',
+    ),
+  ),
+  Pillola(
+    id: 'o26',
+    tema: 'pensieri',
+    testo: LText(
+      'Un pensiero ripetuto cento volte non diventa più vero. Solo più rumoroso.',
+      'A thought repeated a hundred times does not become truer. Only louder.',
+    ),
+  ),
+  Pillola(
+    id: 'o27',
+    tema: 'lentezza',
+    testo: LText(
+      'Fai la prossima cosa piano. Poi vedi se serve davvero la fretta.',
+      'Do the next thing slowly. Then see whether the hurry was really needed.',
+    ),
+  ),
+  Pillola(
+    id: 'o28',
+    tema: 'corpo',
+    testo: LText(
+      'Il corpo è sempre nel presente. Quando ti perdi, torna da lui.',
+      'The body is always in the present. When you get lost, go back to it.',
+    ),
+  ),
+  Pillola(
+    id: 'o29',
+    tema: 'sonno',
+    testo: LText(
+      'Non devi addormentarti. Devi solo smettere di cercare di restare sveglio.',
+      'You do not have to fall asleep. You only have to stop trying to stay awake.',
+    ),
+  ),
+  Pillola(
+    id: 'o30',
+    tema: 'gentilezza',
+    testo: LText(
+      'Anche oggi hai fatto del tuo meglio con quello che avevi. È così che si fa.',
+      'Today, too, you did your best with what you had. That is how it is done.',
+    ),
+  ),
+
+  // ----------------------------------------------------- classici (2)
+  Pillola(
+    id: 'c15',
+    tema: 'presente',
+    tipo: TipoPillola.classico,
+    autore: 'Marco Aurelio',
+    fonte: LText('Pensieri', 'Meditations'),
+    testo: LText('Limitati al presente.', 'Confine yourself to the present.'),
+  ),
+  Pillola(
+    id: 'c16',
+    tema: 'pensieri',
+    tipo: TipoPillola.classico,
+    autore: 'Marco Aurelio',
+    fonte: LText('Pensieri', 'Meditations'),
+    testo: LText(
+      'La vita di un uomo è ciò che i suoi pensieri ne fanno.',
+      'A man\'s life is what his thoughts make of it.',
+    ),
+  ),
+  Pillola(
+    id: 'c17',
+    tema: 'gentilezza',
+    tipo: TipoPillola.classico,
+    autore: 'Marco Aurelio',
+    fonte: LText('Pensieri', 'Meditations'),
+    testo: LText(
+      'Il modo migliore per vendicarsi è non assomigliare a chi ti ha fatto torto.',
+      'The best revenge is not to be like the one who wronged you.',
+    ),
+  ),
+  Pillola(
+    id: 'c18',
+    tema: 'presente',
+    tipo: TipoPillola.classico,
+    autore: 'Seneca',
+    fonte: LText('Lettere a Lucilio', 'Letters to Lucilius'),
+    testo: LText(
+      'Mentre rimandiamo, la vita passa.',
+      'While we put things off, life goes by.',
+    ),
+  ),
+  Pillola(
+    id: 'c19',
+    tema: 'pensieri',
+    tipo: TipoPillola.classico,
+    autore: 'Seneca',
+    fonte: LText('Lettere a Lucilio', 'Letters to Lucilius'),
+    testo: LText(
+      'Chi teme di soffrire, soffre già di ciò che teme.',
+      'He who fears suffering is already suffering from what he fears.',
+    ),
+  ),
+  Pillola(
+    id: 'c20',
+    tema: 'lentezza',
+    tipo: TipoPillola.classico,
+    autore: 'Seneca',
+    fonte: LText('La tranquillità dell\'animo', 'On Tranquillity of Mind'),
+    testo: LText(
+      'La mente deve potersi rilassare: riposata, si rialza più forte.',
+      'The mind must be given relaxation: it rises stronger after rest.',
+    ),
+  ),
+  Pillola(
+    id: 'c21',
+    tema: 'gentilezza',
+    tipo: TipoPillola.classico,
+    autore: 'Epitteto',
+    fonte: LText('Manuale', 'Enchiridion'),
+    testo: LText(
+      'Non pretendere che le cose vadano come vuoi tu; vogli che vadano come vanno, e sarai sereno.',
+      'Do not demand that things happen as you wish; wish them to happen as they do, and you will be at peace.',
+    ),
+  ),
+  Pillola(
+    id: 'c22',
+    tema: 'presente',
+    tipo: TipoPillola.classico,
+    autore: 'Epitteto',
+    fonte: LText('Diatribe', 'Discourses'),
+    testo: LText(
+      'Quanto tempo ancora aspetterai prima di pretendere il meglio da te stesso?',
+      'How long will you wait before you demand the best of yourself?',
+    ),
+  ),
+  Pillola(
+    id: 'c23',
+    tema: 'lentezza',
+    tipo: TipoPillola.classico,
+    autore: 'Lao Tzu',
+    fonte: LText('Tao Te Ching', 'Tao Te Ching'),
+    testo: LText(
+      'Chi ha pazienza vede l\'acqua torbida farsi limpida da sola.',
+      'Have patience and muddy water becomes clear by itself.',
+    ),
+  ),
+  Pillola(
+    id: 'c24',
+    tema: 'gentilezza',
+    tipo: TipoPillola.classico,
+    autore: 'Lao Tzu',
+    fonte: LText('Tao Te Ching', 'Tao Te Ching'),
+    testo: LText(
+      'Lasciare andare è la vera padronanza.',
+      'Letting go is true mastery.',
+    ),
+  ),
+  Pillola(
+    id: 'c25',
+    tema: 'presente',
+    tipo: TipoPillola.classico,
+    autore: 'Chuang Tzu',
+    fonte: LText('Zhuangzi', 'Zhuangzi'),
+    testo: LText(
+      'La mente dell\'uomo saggio è uno specchio: non trattiene, non rifiuta. Riceve, e non conserva.',
+      'The mind of the wise is a mirror: it does not grasp, it does not refuse. It receives, but does not keep.',
+    ),
+  ),
+  Pillola(
+    id: 'c26',
+    tema: 'pensieri',
+    tipo: TipoPillola.classico,
+    autore: 'Buddha',
+    fonte: LText('Dhammapada', 'Dhammapada'),
+    testo: LText(
+      'Non dimorare nel passato, non sognare il futuro: raccogli la mente nel momento presente.',
+      'Do not dwell in the past, do not dream of the future: gather the mind in the present moment.',
+    ),
+  ),
+  Pillola(
+    id: 'c27',
+    tema: 'gentilezza',
+    tipo: TipoPillola.classico,
+    autore: 'Rumi',
+    fonte: LText('Poesie', 'Poems'),
+    testo: LText(
+      'Il dolore è il luogo da cui entra la luce.',
+      'The wound is the place where the light enters you.',
+    ),
+  ),
+  Pillola(
+    id: 'c28',
+    tema: 'presente',
+    tipo: TipoPillola.classico,
+    autore: 'Michel de Montaigne',
+    fonte: LText('Saggi', 'Essays'),
+    testo: LText(
+      'Quando ballo, ballo. Quando dormo, dormo.',
+      'When I dance, I dance. When I sleep, I sleep.',
+    ),
+  ),
+  Pillola(
+    id: 'c29',
+    tema: 'sonno',
+    tipo: TipoPillola.classico,
+    autore: 'Confucio',
+    fonte: LText('Dialoghi', 'Analects'),
+    testo: LText(
+      'Non importa quanto vai piano, purché tu non ti fermi.',
+      'It does not matter how slowly you go, so long as you do not stop.',
+    ),
+  ),
+
+  // ------------------------------------------ ispirate (2)
+  Pillola(
+    id: 'h06',
+    tema: 'pensieri',
+    tipo: TipoPillola.ispirata,
+    autore: 'A. Puddicombe',
+    fonte: LText('Libera la mente', 'The Headspace Guide to Meditation'),
+    testo: LText(
+      'Non puoi controllare quale pensiero arriva. Puoi scegliere se seguirlo fuori dalla stanza.',
+      'You cannot control which thought arrives. You can choose whether to follow it out of the room.',
+    ),
+  ),
+  Pillola(
+    id: 'h07',
+    tema: 'attenzione',
+    tipo: TipoPillola.ispirata,
+    autore: 'A. Puddicombe',
+    fonte: LText('Libera la mente', 'The Headspace Guide to Meditation'),
+    testo: LText(
+      'La consapevolezza non si aggiunge alla giornata: si porta dentro le cose che fai già.',
+      'Awareness is not added to the day: you carry it into the things you already do.',
+    ),
+  ),
+  Pillola(
+    id: 'i17',
+    tema: 'presente',
+    tipo: TipoPillola.ispirata,
+    autore: 'J. Kabat-Zinn',
+    fonte: LText(
+      'Dovunque tu vada, ci sei già',
+      'Wherever You Go, There You Are',
+    ),
+    testo: LText(
+      'Finché respiri, in te c\'è più di giusto che di sbagliato, qualunque cosa non vada.',
+      'As long as you are breathing, there is more right with you than wrong, whatever is the matter.',
+    ),
+  ),
+  Pillola(
+    id: 'i18',
+    tema: 'respiro',
+    tipo: TipoPillola.ispirata,
+    autore: 'Thich Nhat Hanh',
+    fonte: LText(
+      'Il miracolo della presenza mentale',
+      'The Miracle of Mindfulness',
+    ),
+    testo: LText(
+      'Sorridi, respira, vai piano. È tutto qui il segreto.',
+      'Smile, breathe and go slowly. That is the whole secret.',
+    ),
+  ),
+  Pillola(
+    id: 'i19',
+    tema: 'attenzione',
+    tipo: TipoPillola.ispirata,
+    autore: 'M. Csikszentmihalyi',
+    fonte: LText('Flow', 'Flow'),
+    testo: LText(
+      'La noia e l\'ansia sono lo stesso segnale: la sfida e le tue forze non sono in equilibrio.',
+      'Boredom and anxiety are the same signal: the challenge and your skills are out of balance.',
+    ),
+  ),
+  Pillola(
+    id: 'i20',
+    tema: 'presente',
+    tipo: TipoPillola.ispirata,
+    autore: 'E. Tolle',
+    fonte: LText('Il potere di adesso', 'The Power of Now'),
+    testo: LText(
+      'Il problema non è mai questo momento. È la storia che gli costruisci intorno.',
+      'The problem is never this moment. It is the story you build around it.',
+    ),
+  ),
+  Pillola(
+    id: 'i21',
+    tema: 'gentilezza',
+    tipo: TipoPillola.ispirata,
+    autore: 'V. Frankl',
+    fonte: LText('Uno psicologo nei lager', 'Man\'s Search for Meaning'),
+    testo: LText(
+      'Non chiedere cosa ti aspetti dalla vita. Chiediti cosa la vita si aspetta da te, oggi.',
+      'Do not ask what you expect from life. Ask what life expects from you, today.',
+    ),
+  ),
+  Pillola(
+    id: 'i22',
+    tema: 'lentezza',
+    tipo: TipoPillola.ispirata,
+    autore: 'J. Clear',
+    fonte: LText('Piccole abitudini per grandi cambiamenti', 'Atomic Habits'),
+    testo: LText(
+      'Un minuto di respiro al giorno vale più di un\'ora una volta al mese. Le abitudini vincono sull\'intensità.',
+      'One minute of breathing a day beats an hour once a month. Habits win over intensity.',
+    ),
+  ),
 ];
 
 /// Pillola del giorno: cambia ogni giorno, uguale per tutti.

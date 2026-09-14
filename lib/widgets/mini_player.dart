@@ -3,7 +3,9 @@ import 'package:youtube_player_iframe/youtube_player_iframe.dart';
 
 import '../l10n/l10n_ext.dart';
 import '../services/app_scope.dart';
+import '../services/sound_mixer.dart';
 import '../theme.dart';
+import 'mixer_sheet.dart';
 
 /// Barra del player sopra la navigazione. Contiene l'unico [YoutubePlayer]
 /// dell'app: resta montato mentre si cambia scheda, così l'audio continua.
@@ -12,14 +14,24 @@ class MiniPlayer extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final player = AppScope.of(context).player;
+    final scope = AppScope.of(context);
+    final player = scope.player;
+    final mixer = scope.mixer;
     return ListenableBuilder(
-      listenable: player,
+      listenable: Listenable.merge([player, mixer]),
       builder: (context, _) {
         final controller = player.controller;
         final video = player.current;
-        if (controller == null || video == null) {
+        final hasVideo = controller != null && video != null;
+        if (!hasVideo && !mixer.isActive) {
           return const SizedBox.shrink();
+        }
+        if (!hasVideo) {
+          return Material(
+            color: AppColors.surface,
+            elevation: 8,
+            child: _MixerRow(mixer: mixer),
+          );
         }
 
         final width = MediaQuery.sizeOf(context).width;
@@ -32,6 +44,7 @@ class MiniPlayer extends StatelessWidget {
           child: Column(
             mainAxisSize: MainAxisSize.min,
             children: [
+              if (mixer.isActive) _MixerRow(mixer: mixer),
               Container(height: 1, color: Colors.white.withValues(alpha: 0.06)),
               Row(
                 children: [
@@ -100,6 +113,45 @@ class MiniPlayer extends StatelessWidget {
           ),
         );
       },
+    );
+  }
+}
+
+/// Riga compatta del mixer: suoni attivi, stop, apri il foglio.
+class _MixerRow extends StatelessWidget {
+  const _MixerRow({required this.mixer});
+  final SoundMixer mixer;
+
+  @override
+  Widget build(BuildContext context) {
+    final l = context.l10n;
+    return InkWell(
+      onTap: () => showMixerSheet(context),
+      child: Padding(
+        padding: const EdgeInsets.fromLTRB(14, 6, 4, 6),
+        child: Row(
+          children: [
+            const Icon(Icons.tune, size: 18, color: AppColors.accent),
+            const SizedBox(width: 10),
+            Expanded(
+              child: Text(
+                '${l.mixerActive} · ${mixer.active.map((s) => l.mixerSoundName(s.id)).join(', ')}',
+                maxLines: 1,
+                overflow: TextOverflow.ellipsis,
+                style: const TextStyle(fontSize: 12.5),
+              ),
+            ),
+            IconButton(
+              tooltip: l.mixerStop,
+              onPressed: mixer.stop,
+              icon: const Icon(
+                Icons.stop_circle_outlined,
+                color: AppColors.muted,
+              ),
+            ),
+          ],
+        ),
+      ),
     );
   }
 }
