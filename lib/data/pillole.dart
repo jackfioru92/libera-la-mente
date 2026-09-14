@@ -926,6 +926,183 @@ const List<Pillola> pillole = [
       'One minute of breathing a day beats an hour once a month. Habits win over intensity.',
     ),
   ),
+  // ------------------------------------------ mattino: citazioni (3)
+  Pillola(
+    id: 'c30',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Christopher Morley',
+    testo: LText(
+      'C\'è un solo tipo di successo: fare della propria vita ciò che si desidera.',
+      'There is only one success: to be able to spend your life in your own way.',
+    ),
+  ),
+  Pillola(
+    id: 'c31',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Nathaniel Hawthorne',
+    testo: LText(
+      'La felicità è come una farfalla: se la insegui non la prendi mai; se ti siedi tranquillo, può posarsi su di te.',
+      'Happiness is like a butterfly: pursued, it is always beyond your grasp; sit down quietly, and it may alight upon you.',
+    ),
+  ),
+  Pillola(
+    id: 'c32',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Antoine de Saint-Exupéry',
+    testo: LText(
+      'Fai della tua vita un sogno, e di un sogno una realtà.',
+      'Make your life a dream, and a dream a reality.',
+    ),
+  ),
+  Pillola(
+    id: 'c33',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Peter Drucker',
+    testo: LText(
+      'Il modo migliore per predire il futuro è crearlo.',
+      'The best way to predict the future is to create it.',
+    ),
+  ),
+  Pillola(
+    id: 'c34',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Seneca',
+    fonte: LText('Lettere a Lucilio', 'Letters to Lucilius'),
+    testo: LText(
+      'Non è perché le cose sono difficili che non osiamo: è perché non osiamo che sono difficili.',
+      'It is not because things are difficult that we do not dare; it is because we do not dare that they are difficult.',
+    ),
+  ),
+  Pillola(
+    id: 'c35',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Vincent van Gogh',
+    fonte: LText('Lettere', 'Letters'),
+    testo: LText(
+      'Le grandi cose non si fanno d\'impulso, ma con una serie di piccole cose messe insieme.',
+      'Great things are not done by impulse, but by a series of small things brought together.',
+    ),
+  ),
+  Pillola(
+    id: 'c36',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Proverbio giapponese',
+    testo: LText(
+      'Cadi sette volte, rialzati otto.',
+      'Fall down seven times, get up eight.',
+    ),
+  ),
+  Pillola(
+    id: 'c37',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Helen Keller',
+    testo: LText(
+      'Se guardi il sole, non vedrai mai le ombre.',
+      'Keep your face to the sunshine and you cannot see a shadow.',
+    ),
+  ),
+  Pillola(
+    id: 'c38',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Charles R. Swindoll',
+    testo: LText(
+      'La vita è per il 10% ciò che ti accade e per il 90% come reagisci.',
+      'Life is 10% what happens to you and 90% how you react to it.',
+    ),
+  ),
+  Pillola(
+    id: 'c39',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Robert Louis Stevenson',
+    testo: LText(
+      'Non giudicare ogni giorno dal raccolto che ottieni, ma dai semi che pianti.',
+      'Don\'t judge each day by the harvest you reap, but by the seeds you plant.',
+    ),
+  ),
+
+  // ------------------------------------------ mattino: originali (3)
+  Pillola(
+    id: 'o31',
+    tema: 'mattino',
+    testo: LText(
+      'Il mattino non porta solo la luce: porta la possibilità di cambiare ciò che non ti rende felice.',
+      'Morning brings more than light: it brings the chance to change what does not make you happy.',
+    ),
+  ),
+  Pillola(
+    id: 'o32',
+    tema: 'mattino',
+    testo: LText(
+      'La mente è un giardino: pianta un pensiero di gratitudine appena sveglio e guarda fiorire la giornata.',
+      'The mind is a garden: plant one grateful thought as you wake, and watch the day bloom.',
+    ),
+  ),
+  Pillola(
+    id: 'o33',
+    tema: 'mattino',
+    testo: LText(
+      'Ogni giorno è una tela bianca che aspetta i tuoi colori migliori.',
+      'Every day is a blank canvas waiting for your best colours.',
+    ),
+  ),
+  Pillola(
+    id: 'o34',
+    tema: 'mattino',
+    testo: LText(
+      'Non aspettare il momento perfetto: prendi questo momento e rendilo perfetto.',
+      'Don\'t wait for the perfect moment: take this moment and make it perfect.',
+    ),
+  ),
+  Pillola(
+    id: 'o35',
+    tema: 'mattino',
+    testo: LText(
+      'Oggi hai ventiquattro ore nuove di zecca per fare la differenza.',
+      'Today you have twenty-four brand-new hours to make a difference.',
+    ),
+  ),
+  Pillola(
+    id: 'o36',
+    tema: 'mattino',
+    testo: LText(
+      'Lascia andare i pesi di ieri: il mattino è fatto per camminare più leggero.',
+      'Let go of yesterday\'s weight: the morning is made for walking lighter.',
+    ),
+  ),
+  Pillola(
+    id: 'o37',
+    tema: 'mattino',
+    testo: LText(
+      'Ogni alba porta con sé una nuova prospettiva e una nuova forza.',
+      'Every dawn brings a new perspective and new strength.',
+    ),
+  ),
+  Pillola(
+    id: 'o38',
+    tema: 'mattino',
+    testo: LText(
+      'Inizia oggi credendo che qualcosa di buono stia per accadere.',
+      'Start today believing that something good is about to happen.',
+    ),
+  ),
+  Pillola(
+    id: 'o39',
+    tema: 'mattino',
+    testo: LText(
+      'Il tuo sorriso del mattino è il miglior biglietto da visita per il mondo.',
+      'Your morning smile is your best calling card for the world.',
+    ),
+  ),
 ];
 
 /// Pillola del giorno: cambia ogni giorno, uguale per tutti.
