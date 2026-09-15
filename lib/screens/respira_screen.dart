@@ -2,12 +2,12 @@ import 'dart:async';
 import 'dart:math' as math;
 
 import 'package:flutter/material.dart';
-import 'package:flutter/services.dart';
 import 'package:wakelock_plus/wakelock_plus.dart';
 
 import '../data/scenes.dart';
 import '../l10n/l10n_ext.dart';
 import '../services/app_scope.dart';
+import '../services/haptics.dart';
 import '../services/voice_guide.dart';
 import '../theme.dart';
 import '../widgets/asmr_picker.dart';
@@ -71,15 +71,8 @@ class _RespiraScreenState extends State<RespiraScreen>
   /// Vibrazioni per respirare a occhi chiusi: un colpo deciso a Inspira ed
   /// Espira, un doppio tocco ai Trattieni, e un tic leggero a ogni secondo
   /// durante inspirazione ed espirazione (il "conteggio" nel palmo).
-  Future<void> _hapticPhase(int phase) async {
-    if (phase == 1 || phase == 3) {
-      await HapticFeedback.mediumImpact();
-      await Future<void>.delayed(const Duration(milliseconds: 130));
-      await HapticFeedback.mediumImpact();
-    } else {
-      await HapticFeedback.heavyImpact();
-    }
-  }
+  Future<void> _hapticPhase(int phase) =>
+      phase == 1 || phase == 3 ? Haptics.double_() : Haptics.strong();
 
   void _tick() {
     final s = breathState(_ctrl.value);
@@ -88,7 +81,7 @@ class _RespiraScreenState extends State<RespiraScreen>
       final second = (s.progress * prefs.sideSeconds).floor();
       if (second != _lastSecond) {
         _lastSecond = second;
-        if (second > 0) HapticFeedback.selectionClick();
+        if (second > 0) Haptics.tick();
       }
     }
     if (s.phase != _phase) {
@@ -136,7 +129,7 @@ class _RespiraScreenState extends State<RespiraScreen>
         () => _stop(completed: true),
       );
     }
-    if (prefs.haptics) HapticFeedback.lightImpact();
+    if (prefs.haptics) Haptics.confirm();
     if (prefs.voiceGuide) {
       final l = context.l10n;
       _prepareVoice().then(
@@ -162,7 +155,7 @@ class _RespiraScreenState extends State<RespiraScreen>
       await _scope!.prefs.recordSession(math.max(1, elapsed.inMinutes));
     }
     if (completed && mounted) {
-      if (_scope!.prefs.haptics) HapticFeedback.heavyImpact();
+      if (_scope!.prefs.haptics) Haptics.strong();
       final l = context.l10n;
       if (_scope!.prefs.voiceGuide) {
         _scope!.voice.say(VoiceGuide.complete, l.sessionCompletedTitle);
@@ -247,7 +240,7 @@ class _RespiraScreenState extends State<RespiraScreen>
                           onPressed: () {
                             final on = !prefs.haptics;
                             prefs.setHaptics(on);
-                            if (on) HapticFeedback.mediumImpact();
+                            if (on) Haptics.confirm();
                           },
                           icon: Icon(
                             Icons.vibration,

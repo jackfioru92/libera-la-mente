@@ -34,7 +34,7 @@ Health & Fitness
 ## Suggested tags
 meditation, breathing, anxiety, sleep, ASMR, relaxation, mindfulness
 
-## Release notes (v1.1.1)
+## Release notes (v1.1.2)
 What's new in 1.1:
 • Sound mixer: rain, fire, wind, white/pink/brown noise — copyright-free, works with the screen off and alongside a video
 • Haptic metronome: a tap every second of Inhale and Exhale, to breathe with your eyes closed
@@ -42,3 +42,4 @@ What's new in 1.1:
 • 36 new ASMR videos and two categories: Book pages, Cat purring
 • 26 new pills (Marcus Aurelius, Seneca, Lao Tzu, Puddicombe…)
 • 19 new morning pills (Seneca, Van Gogh, Stevenson, Hawthorne…)
+• More reliable vibration on Android (dedicated vibration engine) and refreshed icon

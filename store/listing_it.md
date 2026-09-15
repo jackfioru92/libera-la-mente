@@ -34,7 +34,7 @@ Salute e fitness
 ## Tag suggeriti
 meditazione, respirazione, ansia, sonno, ASMR, rilassamento, mindfulness
 
-## Note di rilascio (v1.1.1)
+## Note di rilascio (v1.1.2)
 Novità 1.1:
 • Mixer di suoni: pioggia, fuoco, vento, rumore bianco/rosa/marrone, senza copyright, anche a schermo spento e insieme a un video
 • Metronomo tattile: un tocco a ogni secondo di Inspira ed Espira, per respirare a occhi chiusi
@@ -42,3 +42,4 @@ Novità 1.1:
 • 36 nuovi video ASMR e due categorie: Pagine di libri, Fusa di gatto
 • 26 nuove pillole (Marco Aurelio, Seneca, Lao Tzu, Puddicombe…)
 • 19 nuove pillole del mattino (Seneca, Van Gogh, Stevenson, Hawthorne…)
+• Vibrazione più affidabile su Android (motore di vibrazione dedicato) e icona rinnovata
