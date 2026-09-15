@@ -942,6 +942,7 @@ const List<Pillola> pillole = [
     tema: 'mattino',
     tipo: TipoPillola.classico,
     autore: 'Nathaniel Hawthorne',
+    fonte: LText('attribuita', 'attributed'),
     testo: LText(
       'La felicità è come una farfalla: se la insegui non la prendi mai; se ti siedi tranquillo, può posarsi su di te.',
       'Happiness is like a butterfly: pursued, it is always beyond your grasp; sit down quietly, and it may alight upon you.',
@@ -962,6 +963,7 @@ const List<Pillola> pillole = [
     tema: 'mattino',
     tipo: TipoPillola.classico,
     autore: 'Peter Drucker',
+    fonte: LText('attribuita', 'attributed'),
     testo: LText(
       'Il modo migliore per predire il futuro è crearlo.',
       'The best way to predict the future is to create it.',
@@ -1101,6 +1103,835 @@ const List<Pillola> pillole = [
     testo: LText(
       'Il tuo sorriso del mattino è il miglior biglietto da visita per il mondo.',
       'Your morning smile is your best calling card for the world.',
+    ),
+  ),
+  // ------------------------------------------ dai calendari filosofici 2026-2027: citazioni
+  Pillola(
+    id: 'c41',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Socrate',
+    fonte: LText('attribuita', 'attributed'),
+    testo: LText(
+      'La saggezza inizia nella meraviglia.',
+      'Wisdom begins in wonder.',
+    ),
+  ),
+  Pillola(
+    id: 'c42',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Aristotele',
+    fonte: LText('Etica Nicomachea', 'Nicomachean Ethics'),
+    testo: LText(
+      'La felicità dipende da noi stessi.',
+      'Happiness depends upon ourselves.',
+    ),
+  ),
+  Pillola(
+    id: 'c43',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Biante di Priene',
+    fonte: LText('attribuita', 'attributed'),
+    testo: LText(
+      'L\'unica vera sfortuna è non saper sopportare la sfortuna.',
+      'The only real misfortune is not being able to bear misfortune.',
+    ),
+  ),
+  Pillola(
+    id: 'c44',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Seneca',
+    fonte: LText('Lettere a Lucilio', 'Letters to Lucilius'),
+    testo: LText(
+      'Vivi ogni giorno come se fosse una vita intera.',
+      'Live each day as if it were a whole life.',
+    ),
+  ),
+  Pillola(
+    id: 'c45',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Mahatma Gandhi',
+    fonte: LText('attribuita', 'attributed'),
+    testo: LText(
+      'Sii il cambiamento che vuoi vedere nel mondo.',
+      'Be the change you wish to see in the world.',
+    ),
+  ),
+  Pillola(
+    id: 'c46',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'William Jennings Bryan',
+    testo: LText(
+      'Il destino non è questione di fortuna, ma di scelte.',
+      'Destiny is not a matter of chance; it is a matter of choice.',
+    ),
+  ),
+  Pillola(
+    id: 'c47',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Friedrich Nietzsche',
+    fonte: LText('Crepuscolo degli idoli', 'Twilight of the Idols'),
+    testo: LText(
+      'Chi ha un perché per vivere può sopportare quasi ogni come.',
+      'He who has a why to live can bear almost any how.',
+    ),
+  ),
+  Pillola(
+    id: 'c48',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Albert Einstein',
+    fonte: LText('attribuita', 'attributed'),
+    testo: LText(
+      'Impara da ieri, vivi per oggi, spera nel domani.',
+      'Learn from yesterday, live for today, hope for tomorrow.',
+    ),
+  ),
+  Pillola(
+    id: 'c49',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Winston Churchill',
+    fonte: LText('attribuita', 'attributed'),
+    testo: LText(
+      'Il successo è andare di fallimento in fallimento senza perdere l\'entusiasmo.',
+      'Success is going from failure to failure without losing enthusiasm.',
+    ),
+  ),
+  Pillola(
+    id: 'c50',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Confucio',
+    fonte: LText('attribuita', 'attributed'),
+    testo: LText(
+      'Ovunque tu vada, vacci con tutto il cuore.',
+      'Wherever you go, go with all your heart.',
+    ),
+  ),
+  Pillola(
+    id: 'c51',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'John Wooden',
+    testo: LText(
+      'Rendi ogni giorno il tuo capolavoro.',
+      'Make each day your masterpiece.',
+    ),
+  ),
+  Pillola(
+    id: 'c52',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Helen Keller',
+    testo: LText(
+      'L\'ottimismo è la fede che porta al compimento. Niente si fa senza speranza e fiducia.',
+      'Optimism is the faith that leads to achievement. Nothing can be done without hope and confidence.',
+    ),
+  ),
+  Pillola(
+    id: 'c53',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Walt Disney',
+    fonte: LText('attribuita', 'attributed'),
+    testo: LText(
+      'Se puoi sognarlo, puoi farlo.',
+      'If you can dream it, you can do it.',
+    ),
+  ),
+  Pillola(
+    id: 'c54',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Nelson Mandela',
+    testo: LText(
+      'Il coraggio non è l\'assenza di paura, ma il trionfo su di essa.',
+      'Courage is not the absence of fear, but the triumph over it.',
+    ),
+  ),
+  Pillola(
+    id: 'c55',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Jean-Jacques Rousseau',
+    fonte: LText('attribuita', 'attributed'),
+    testo: LText(
+      'La pazienza è amara, ma il suo frutto è dolce.',
+      'Patience is bitter, but its fruit is sweet.',
+    ),
+  ),
+  Pillola(
+    id: 'c56',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Henry Ward Beecher',
+    testo: LText(
+      'L\'arte di essere felici sta nel saper trarre felicità dalle cose comuni.',
+      'The art of being happy lies in the power of extracting happiness from common things.',
+    ),
+  ),
+  Pillola(
+    id: 'c57',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'T. S. Eliot',
+    fonte: LText('attribuita', 'attributed'),
+    testo: LText(
+      'Ogni momento è un nuovo inizio.',
+      'Every moment is a fresh beginning.',
+    ),
+  ),
+  Pillola(
+    id: 'c58',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Richard Wagner',
+    fonte: LText('attribuita', 'attributed'),
+    testo: LText(
+      'La gioia non è nelle cose: è in noi.',
+      'Joy is not in things; it is in us.',
+    ),
+  ),
+  Pillola(
+    id: 'c59',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Proverbio',
+    testo: LText(
+      'Non aspettare che il vento gonfi la vela. Rema.',
+      'Don\'t wait for the wind to fill the sail. Row.',
+    ),
+  ),
+  Pillola(
+    id: 'c60',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Alessandro Magno',
+    fonte: LText('attribuita', 'attributed'),
+    testo: LText(
+      'Niente è impossibile per chi ci prova.',
+      'There is nothing impossible to him who will try.',
+    ),
+  ),
+  Pillola(
+    id: 'c61',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Proverbio giapponese',
+    testo: LText(
+      'Il tempo passato a ridere è tempo passato con gli dei.',
+      'The time you spend laughing is time spent with the gods.',
+    ),
+  ),
+  Pillola(
+    id: 'c62',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Melody Beattie',
+    fonte: LText('attribuita', 'attributed'),
+    testo: LText(
+      'La gratitudine trasforma ciò che abbiamo in abbastanza.',
+      'Gratitude turns what we have into enough.',
+    ),
+  ),
+  Pillola(
+    id: 'c63',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Albert Einstein',
+    fonte: LText('attribuita', 'attributed'),
+    testo: LText(
+      'Nel mezzo delle difficoltà nascono le opportunità.',
+      'In the middle of difficulty lies opportunity.',
+    ),
+  ),
+  Pillola(
+    id: 'c64',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Ian Maclaren',
+    fonte: LText('attribuita', 'attributed'),
+    testo: LText(
+      'Ogni persona che incontri sta combattendo una battaglia di cui non sai nulla. Sii gentile. Sempre.',
+      'Everyone you meet is fighting a battle you know nothing about. Be kind. Always.',
+    ),
+  ),
+  Pillola(
+    id: 'c65',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Margaret Lee Runbeck',
+    fonte: LText('attribuita', 'attributed'),
+    testo: LText(
+      'La felicità non è una stazione d\'arrivo, ma un modo di viaggiare.',
+      'Happiness is not a station you arrive at, but a manner of travelling.',
+    ),
+  ),
+  Pillola(
+    id: 'c66',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Confucio',
+    fonte: LText('attribuita', 'attributed'),
+    testo: LText(
+      'La nostra gloria più grande non sta nel non cadere mai, ma nel rialzarci ogni volta che cadiamo.',
+      'Our greatest glory is not in never falling, but in rising every time we fall.',
+    ),
+  ),
+  Pillola(
+    id: 'c67',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Marco Aurelio',
+    fonte: LText('Pensieri', 'Meditations'),
+    testo: LText(
+      'La felicità della tua vita dipende dalla qualità dei tuoi pensieri.',
+      'The happiness of your life depends upon the quality of your thoughts.',
+    ),
+  ),
+  Pillola(
+    id: 'c68',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Dalai Lama',
+    fonte: LText('attribuita', 'attributed'),
+    testo: LText(
+      'Ricorda: non ottenere ciò che vuoi è, a volte, un meraviglioso colpo di fortuna.',
+      'Remember that sometimes not getting what you want is a wonderful stroke of luck.',
+    ),
+  ),
+  Pillola(
+    id: 'c69',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Steve Jobs',
+    testo: LText(
+      'L\'unico modo di fare un gran lavoro è amare quello che fai.',
+      'The only way to do great work is to love what you do.',
+    ),
+  ),
+  Pillola(
+    id: 'c70',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Seneca',
+    fonte: LText('attribuita', 'attributed'),
+    testo: LText(
+      'La fortuna è ciò che accade quando la preparazione incontra l\'occasione.',
+      'Luck is what happens when preparation meets opportunity.',
+    ),
+  ),
+  Pillola(
+    id: 'c71',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Walt Whitman',
+    fonte: LText('attribuita', 'attributed'),
+    testo: LText(
+      'Tieni il viso rivolto al sole e le ombre cadranno dietro di te.',
+      'Keep your face always toward the sunshine, and shadows will fall behind you.',
+    ),
+  ),
+  Pillola(
+    id: 'c72',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Ralph Waldo Emerson',
+    fonte: LText('attribuita', 'attributed'),
+    testo: LText(
+      'L\'unica persona che sei destinato a diventare è quella che decidi di essere.',
+      'The only person you are destined to become is the person you decide to be.',
+    ),
+  ),
+  Pillola(
+    id: 'c73',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Seneca',
+    fonte: LText('Lettere a Lucilio', 'Letters to Lucilius'),
+    testo: LText(
+      'Se un uomo non sa verso quale porto è diretto, nessun vento gli è favorevole.',
+      'If a man knows not to which port he sails, no wind is favourable.',
+    ),
+  ),
+  Pillola(
+    id: 'c74',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Muhammad Ali',
+    testo: LText(
+      'Non contare i giorni: fai in modo che i giorni contino.',
+      'Don\'t count the days; make the days count.',
+    ),
+  ),
+  Pillola(
+    id: 'c75',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Will Durant',
+    fonte: LText('su Aristotele', 'on Aristotle'),
+    testo: LText(
+      'Siamo ciò che facciamo ripetutamente. L\'eccellenza, quindi, non è un atto ma un\'abitudine.',
+      'We are what we repeatedly do. Excellence, then, is not an act but a habit.',
+    ),
+  ),
+  Pillola(
+    id: 'c76',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Albert Einstein',
+    fonte: LText('attribuita', 'attributed'),
+    testo: LText(
+      'La creatività è l\'intelligenza che si diverte.',
+      'Creativity is intelligence having fun.',
+    ),
+  ),
+  Pillola(
+    id: 'c77',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Maya Angelou',
+    testo: LText(
+      'Le persone dimenticheranno ciò che hai detto, ma non dimenticheranno mai come le hai fatte sentire.',
+      'People will forget what you said, but they will never forget how you made them feel.',
+    ),
+  ),
+  Pillola(
+    id: 'c78',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Charlie Chaplin',
+    fonte: LText('attribuita', 'attributed'),
+    testo: LText(
+      'Un giorno senza un sorriso è un giorno perso.',
+      'A day without a smile is a day wasted.',
+    ),
+  ),
+  Pillola(
+    id: 'c79',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Mark Twain',
+    fonte: LText('attribuita', 'attributed'),
+    testo: LText(
+      'Tra vent\'anni sarai più deluso dalle cose che non hai fatto che da quelle che hai fatto.',
+      'Twenty years from now you will be more disappointed by the things you didn\'t do than by the ones you did.',
+    ),
+  ),
+  Pillola(
+    id: 'c80',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Mark Twain',
+    fonte: LText('attribuita', 'attributed'),
+    testo: LText(
+      'Il segreto per andare avanti è iniziare.',
+      'The secret of getting ahead is getting started.',
+    ),
+  ),
+  Pillola(
+    id: 'c81',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Marco Aurelio',
+    fonte: LText('Pensieri', 'Meditations'),
+    testo: LText(
+      'Accetta le cose a cui il destino ti lega, e ama le persone con cui il destino ti unisce: ma fallo con tutto il cuore.',
+      'Accept the things to which fate binds you, and love the people with whom fate brings you together, but do so with all your heart.',
+    ),
+  ),
+  Pillola(
+    id: 'c82',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Ralph Waldo Emerson',
+    fonte: LText('attribuita', 'attributed'),
+    testo: LText(
+      'Non andare dove porta il sentiero: vai dove il sentiero non c\'è ancora, e lascia una traccia.',
+      'Do not go where the path may lead; go instead where there is no path and leave a trail.',
+    ),
+  ),
+  Pillola(
+    id: 'c83',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Antoine de Saint-Exupéry',
+    fonte: LText('Il piccolo principe', 'The Little Prince'),
+    testo: LText(
+      'Tutti i grandi sono stati bambini una volta. Ma pochi se ne ricordano.',
+      'All grown-ups were once children. But only few of them remember it.',
+    ),
+  ),
+  Pillola(
+    id: 'c84',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Oscar Wilde',
+    fonte: LText('L\'anima dell\'uomo', 'The Soul of Man'),
+    testo: LText(
+      'Vivere è la cosa più rara al mondo. La maggior parte della gente esiste, e basta.',
+      'To live is the rarest thing in the world. Most people exist, that is all.',
+    ),
+  ),
+  Pillola(
+    id: 'c85',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Dan Millman',
+    fonte: LText('La via del guerriero di pace', 'Way of the Peaceful Warrior'),
+    testo: LText(
+      'Il segreto del cambiamento è mettere tutta l\'energia non nel combattere il vecchio, ma nel costruire il nuovo.',
+      'The secret of change is to focus all of your energy not on fighting the old, but on building the new.',
+    ),
+  ),
+  Pillola(
+    id: 'c86',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Oscar Wilde',
+    fonte: LText('attribuita', 'attributed'),
+    testo: LText(
+      'Sii te stesso: tutto il resto è già stato preso.',
+      'Be yourself; everyone else is already taken.',
+    ),
+  ),
+  Pillola(
+    id: 'c87',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Detto zen',
+    testo: LText(
+      'Se cammini, cammina. Se siedi, siedi. Soprattutto, non tentennare.',
+      'When walking, walk. When sitting, sit. Above all, don\'t wobble.',
+    ),
+  ),
+  Pillola(
+    id: 'c88',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Albert Einstein',
+    fonte: LText('Lettera al figlio Eduard', 'Letter to his son Eduard'),
+    testo: LText(
+      'La vita è come andare in bicicletta: per restare in equilibrio devi continuare a muoverti.',
+      'Life is like riding a bicycle. To keep your balance you must keep moving.',
+    ),
+  ),
+  Pillola(
+    id: 'c89',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Lao Tzu',
+    fonte: LText('attribuita', 'attributed'),
+    testo: LText(
+      'Se sei depresso vivi nel passato, se sei ansioso vivi nel futuro, se sei in pace vivi nel presente.',
+      'If you are depressed you are living in the past; if you are anxious you are living in the future; if you are at peace you are living in the present.',
+    ),
+  ),
+  Pillola(
+    id: 'c90',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Proverbio africano',
+    testo: LText(
+      'Se vuoi andare veloce, vai da solo. Se vuoi andare lontano, vai insieme.',
+      'If you want to go fast, go alone. If you want to go far, go together.',
+    ),
+  ),
+  Pillola(
+    id: 'c91',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Eleanor Roosevelt',
+    testo: LText(
+      'Il futuro appartiene a chi crede nella bellezza dei propri sogni.',
+      'The future belongs to those who believe in the beauty of their dreams.',
+    ),
+  ),
+  Pillola(
+    id: 'c92',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Marco Aurelio',
+    fonte: LText('Pensieri', 'Meditations'),
+    testo: LText(
+      'Concentrati sulla bellezza della vita. Guarda le stelle, e vediti correre con loro.',
+      'Dwell on the beauty of life. Watch the stars, and see yourself running with them.',
+    ),
+  ),
+  Pillola(
+    id: 'c93',
+    tema: 'mattino',
+    tipo: TipoPillola.classico,
+    autore: 'Dolly Parton',
+    fonte: LText('attribuita', 'attributed'),
+    testo: LText(
+      'Le tempeste fanno mettere agli alberi radici più profonde.',
+      'Storms make trees take deeper roots.',
+    ),
+  ),
+
+  // ------------------------------------------ dai calendari filosofici 2026-2027: aforismi
+  Pillola(
+    id: 'o40',
+    tema: 'mattino',
+    testo: LText(
+      'Il mattino ha l\'oro in bocca, se accogli il giorno con un sorriso.',
+      'The early morning has gold in its mouth, if you greet the day with a smile.',
+    ),
+  ),
+  Pillola(
+    id: 'o41',
+    tema: 'mattino',
+    testo: LText(
+      'Ogni giorno è un nuovo inizio. Fai un respiro profondo e ricomincia.',
+      'Every day is a new beginning. Take a deep breath and start again.',
+    ),
+  ),
+  Pillola(
+    id: 'o42',
+    tema: 'mattino',
+    testo: LText(
+      'La calma è la virtù dei forti.',
+      'Calm is the virtue of the strong.',
+    ),
+  ),
+  Pillola(
+    id: 'o43',
+    tema: 'mattino',
+    testo: LText(
+      'Trova la bellezza nelle piccole cose.',
+      'Find beauty in the small things.',
+    ),
+  ),
+  Pillola(
+    id: 'o44',
+    tema: 'mattino',
+    testo: LText(
+      'Un piccolo pensiero positivo al mattino può cambiare l\'intera giornata.',
+      'One small positive thought in the morning can change the whole day.',
+    ),
+  ),
+  Pillola(
+    id: 'o45',
+    tema: 'mattino',
+    testo: LText(
+      'Fai spazio alle cose che ti fanno sentire vivo.',
+      'Make room for the things that make you feel alive.',
+    ),
+  ),
+  Pillola(
+    id: 'o46',
+    tema: 'mattino',
+    testo: LText(
+      'Circondati di persone che alimentano la tua luce, non la tua ombra.',
+      'Surround yourself with people who feed your light, not your shadow.',
+    ),
+  ),
+  Pillola(
+    id: 'o47',
+    tema: 'mattino',
+    testo: LText(
+      'Sii gentile con te stesso, oggi.',
+      'Be kind to yourself, today.',
+    ),
+  ),
+  Pillola(
+    id: 'o48',
+    tema: 'mattino',
+    testo: LText(
+      'Fai oggi qualcosa per cui il te stesso di domani ti ringrazierà.',
+      'Do something today that your future self will thank you for.',
+    ),
+  ),
+  Pillola(
+    id: 'o49',
+    tema: 'mattino',
+    testo: LText(
+      'Accetta ciò che è, lascia andare ciò che era, abbi fiducia in ciò che sarà.',
+      'Accept what is, let go of what was, have faith in what will be.',
+    ),
+  ),
+  Pillola(
+    id: 'o50',
+    tema: 'mattino',
+    testo: LText(
+      'Più sei grato, più bellezza vedrai.',
+      'The more grateful you are, the more beauty you will see.',
+    ),
+  ),
+  Pillola(
+    id: 'o51',
+    tema: 'mattino',
+    testo: LText(
+      'Le cose migliori della vita non sono cose.',
+      'The best things in life are not things.',
+    ),
+  ),
+  Pillola(
+    id: 'o52',
+    tema: 'mattino',
+    testo: LText(
+      'Sii fiero di quanto sei arrivato lontano, e abbi fiducia in quanto lontano puoi ancora arrivare.',
+      'Be proud of how far you have come, and have faith in how far you can still go.',
+    ),
+  ),
+  Pillola(
+    id: 'o53',
+    tema: 'mattino',
+    testo: LText(
+      'Coltiva la gentilezza nel tuo cuore.',
+      'Cultivate kindness in your heart.',
+    ),
+  ),
+  Pillola(
+    id: 'o54',
+    tema: 'mattino',
+    testo: LText(
+      'Concentrati sul presente: è l\'unico momento che hai.',
+      'Focus on the present: it is the only moment you have.',
+    ),
+  ),
+  Pillola(
+    id: 'o55',
+    tema: 'mattino',
+    testo: LText(
+      'Non c\'è fretta: le cose belle richiedono tempo.',
+      'There is no hurry: beautiful things take time.',
+    ),
+  ),
+  Pillola(
+    id: 'o56',
+    tema: 'mattino',
+    testo: LText(
+      'Sorridi allo specchio: è il primo passo per cambiare l\'energia della giornata.',
+      'Smile at the mirror: it is the first step to changing the energy of your day.',
+    ),
+  ),
+  Pillola(
+    id: 'o57',
+    tema: 'mattino',
+    testo: LText(
+      'Accogli la giornata con il cuore aperto e la mente pronta a meravigliarsi.',
+      'Welcome the day with an open heart and a mind ready to wonder.',
+    ),
+  ),
+  Pillola(
+    id: 'o58',
+    tema: 'mattino',
+    testo: LText(
+      'Il successo è fare piccoli passi avanti, ogni singolo giorno.',
+      'Success is taking small steps forward, every single day.',
+    ),
+  ),
+  Pillola(
+    id: 'o59',
+    tema: 'mattino',
+    testo: LText(
+      'Coltiva la pazienza: è la chiave che apre tutte le porte del benessere.',
+      'Cultivate patience: it is the key that opens every door to well-being.',
+    ),
+  ),
+  Pillola(
+    id: 'o60',
+    tema: 'mattino',
+    testo: LText(
+      'Ciò che è per te troverà la strada per raggiungerti.',
+      'What is meant for you will find its way to you.',
+    ),
+  ),
+  Pillola(
+    id: 'o61',
+    tema: 'mattino',
+    testo: LText(
+      'La luce del mattino ci ricorda che possiamo sempre ricominciare.',
+      'The morning light reminds us that we can always begin again.',
+    ),
+  ),
+  Pillola(
+    id: 'o62',
+    tema: 'mattino',
+    testo: LText(
+      'La pace interiore comincia quando decidi di non lasciare che un\'altra persona o un evento controlli le tue emozioni.',
+      'Inner peace begins the moment you decide not to let another person or event control your emotions.',
+    ),
+  ),
+  Pillola(
+    id: 'o63',
+    tema: 'mattino',
+    testo: LText(
+      'Fidati del processo: ogni giorno ti stai avvicinando.',
+      'Trust the process: every day you are getting closer.',
+    ),
+  ),
+  Pillola(
+    id: 'o64',
+    tema: 'mattino',
+    testo: LText(
+      'Oggi è un giorno perfetto per iniziare a essere felici.',
+      'Today is a perfect day to start being happy.',
+    ),
+  ),
+  Pillola(
+    id: 'o65',
+    tema: 'mattino',
+    testo: LText(
+      'La vita ti riserva sempre sorprese: impara a coglierne il lato migliore.',
+      'Life always has surprises in store: learn to see their best side.',
+    ),
+  ),
+  Pillola(
+    id: 'o66',
+    tema: 'mattino',
+    testo: LText(
+      'Ogni risveglio è un nuovo inizio e una nuova occasione per fare ciò che ami.',
+      'Every awakening is a new beginning and a new chance to do what you love.',
+    ),
+  ),
+  Pillola(
+    id: 'o67',
+    tema: 'mattino',
+    testo: LText(
+      'Rendi la gentilezza un\'abitudine quotidiana.',
+      'Make kindness a daily habit.',
+    ),
+  ),
+  Pillola(
+    id: 'o68',
+    tema: 'mattino',
+    testo: LText(
+      'Fai le cose con amore, e il resto seguirà.',
+      'Do things with love, and the rest will follow.',
+    ),
+  ),
+  Pillola(
+    id: 'o69',
+    tema: 'mattino',
+    testo: LText(
+      'Sii la ragione per cui qualcuno sorride, oggi.',
+      'Be the reason someone smiles today.',
+    ),
+  ),
+  Pillola(
+    id: 'o70',
+    tema: 'mattino',
+    testo: LText(
+      'Trova la pace dentro di te e tutto il resto andrà al suo posto.',
+      'Find peace within and everything else will fall into place.',
+    ),
+  ),
+  Pillola(
+    id: 'o71',
+    tema: 'mattino',
+    testo: LText(
+      'La vita è un dono: non dimenticarlo mai.',
+      'Life is a gift: never forget it.',
     ),
   ),
 ];
