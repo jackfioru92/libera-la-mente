@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """Rigenera store/icon-512.png e le feature graphic 1024x500 (IT/EN) dall'icona.
 
     python3 tool/genera_grafica_store.py

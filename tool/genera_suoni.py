@@ -1,3 +1,4 @@
+#!/usr/bin/env python3
 """Genera i loop del mixer in assets/mixer/*.m4a (60 s, crossfade, mono, AAC 96 kbps).
 
     python3 tool/genera_suoni.py
