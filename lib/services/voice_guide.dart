@@ -72,7 +72,10 @@ class VoiceGuide {
   /// Clip audio presenti nel bundle (vedi [scanAssets]).
   final Set<String> assets;
   final FlutterTts _tts = FlutterTts();
-  AudioPlayer? _clipPlayer;
+
+  /// Un player per clip (chiave `lang/key`), caricato una volta sola: così
+  /// due frasi ravvicinate non si interrompono a vicenda in fase di caricamento.
+  final Map<String, AudioPlayer> _clipPlayers = {};
   bool _configured = false;
   String _lang = '';
   String? _appliedVoiceId;
@@ -164,6 +167,7 @@ class VoiceGuide {
         _lang = code;
         _appliedVoiceId = null;
         await _tts.setLanguage(tag);
+        await preloadClips(code);
       }
       final voices = await voicesFor(code);
       VoiceInfo? chosen;
@@ -190,13 +194,15 @@ class VoiceGuide {
     try {
       if (hasClip(_lang, key)) {
         await _tts.stop();
-        final p = _clipPlayer ??= AudioPlayer();
-        await p.stop();
-        await p.setAsset(clipPath(_lang, key));
+        final p = await _clip(_lang, key);
+        for (final other in _clipPlayers.values) {
+          if (other != p && other.playing) await other.pause();
+        }
+        await p.seek(Duration.zero);
         p.play();
         return;
       }
-      await _clipPlayer?.stop();
+      await _stopClips();
       await _tts.stop();
       await _tts.speak(text);
     } catch (e) {
@@ -204,11 +210,40 @@ class VoiceGuide {
     }
   }
 
+  Future<AudioPlayer> _clip(String lang, String key) async {
+    final id = '$lang/$key';
+    var p = _clipPlayers[id];
+    if (p != null) return p;
+    p = AudioPlayer();
+    _clipPlayers[id] = p;
+    await p.setAsset(clipPath(lang, key));
+    return p;
+  }
+
+  Future<void> _stopClips() async {
+    for (final p in _clipPlayers.values) {
+      if (p.playing) await p.pause();
+    }
+  }
+
+  /// Precarica le clip della lingua, così la prima frase parte subito.
+  Future<void> preloadClips(String lang) async {
+    for (final key in const [inhale, hold, exhale, complete, test]) {
+      if (hasClip(lang, key)) {
+        try {
+          await _clip(lang, key);
+        } catch (e) {
+          debugPrint('VoiceGuide.preload: $e');
+        }
+      }
+    }
+  }
+
   /// Anteprima di una voce di sistema: ignora le clip.
   Future<void> preview(String text) async {
     await _configure();
     try {
-      await _clipPlayer?.stop();
+      await _stopClips();
       await _tts.stop();
       await _tts.speak(text);
     } catch (e) {
@@ -219,12 +254,14 @@ class VoiceGuide {
   Future<void> stop() async {
     try {
       await _tts.stop();
-      await _clipPlayer?.stop();
+      await _stopClips();
     } catch (_) {}
   }
 
   void dispose() {
-    _clipPlayer?.dispose();
+    for (final p in _clipPlayers.values) {
+      p.dispose();
+    }
   }
 
   /// Le clip presenti nel bundle, da passare al costruttore.
