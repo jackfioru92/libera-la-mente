@@ -34,7 +34,7 @@ Health & Fitness
 ## Suggested tags
 meditation, breathing, anxiety, sleep, ASMR, relaxation, mindfulness
 
-## Release notes (v1.1.3)
+## Release notes (v1.1.4)
 What's new in 1.1:
 • Sound mixer: rain, fire, wind, white/pink/brown noise — copyright-free, works with the screen off and alongside a video
 • Haptic metronome: a tap every second of Inhale and Exhale, to breathe with your eyes closed
@@ -44,3 +44,5 @@ What's new in 1.1:
 • 19 new morning pills (Seneca, Van Gogh, Stevenson, Hawthorne…)
 • More reliable vibration on Android (dedicated vibration engine) and refreshed icon
 • 85 new pills from the philosophical calendars (Marcus Aurelius, Seneca, Keller, Mandela, Wilde…) → over 190 in total
+• 58 new videos: scissors-only haircuts (SWITCHSCISSORS, CalmCuts), Angelo Shoe Shine, and three new categories: Japanese barber, Summer night, Train ride → 160 in total
+• Breathe: fixed layout with the expanded video player

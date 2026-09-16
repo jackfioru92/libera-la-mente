@@ -554,6 +554,42 @@ abstract class AppLocalizations {
   /// **'Forbici, rasoio, pennello da barba'**
   String get catBarberDesc;
 
+  /// No description provided for @catJapan.
+  ///
+  /// In it, this message translates to:
+  /// **'Barbiere giapponese'**
+  String get catJapan;
+
+  /// No description provided for @catJapanDesc.
+  ///
+  /// In it, this message translates to:
+  /// **'Rasoio, forbici e massaggio alla vecchia scuola'**
+  String get catJapanDesc;
+
+  /// No description provided for @catCrickets.
+  ///
+  /// In it, this message translates to:
+  /// **'Notte d\'estate'**
+  String get catCrickets;
+
+  /// No description provided for @catCricketsDesc.
+  ///
+  /// In it, this message translates to:
+  /// **'Grilli e fuoco da campo'**
+  String get catCricketsDesc;
+
+  /// No description provided for @catTrain.
+  ///
+  /// In it, this message translates to:
+  /// **'Viaggio in treno'**
+  String get catTrain;
+
+  /// No description provided for @catTrainDesc.
+  ///
+  /// In it, this message translates to:
+  /// **'Il ritmo dei binari, di notte'**
+  String get catTrainDesc;
+
   /// No description provided for @catHouse.
   ///
   /// In it, this message translates to:

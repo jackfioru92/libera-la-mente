@@ -112,7 +112,10 @@ class _CalmaAppState extends State<CalmaApp> {
     WidgetsBinding.instance.addPostFrameCallback((_) {
       if (videoId != null) {
         final v = asmrVideos.where((v) => v.id == videoId).firstOrNull;
-        if (v != null) _player.play(v, sleepMinutes: widget.prefs.sleepMinutes);
+        if (v != null) {
+          _player.play(v, sleepMinutes: widget.prefs.sleepMinutes);
+          if (demo['expand'] == true) _player.toggleExpanded();
+        }
       }
       if (start) _nav.startBreathing();
     });

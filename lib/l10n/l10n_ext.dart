@@ -28,6 +28,9 @@ extension L10nData on AppLocalizations {
     'tastiera' => catKeyboard,
     'lofi' => catLofi,
     'pagine' => catPages,
+    'giappone' => catJapan,
+    'grilli' => catCrickets,
+    'treno' => catTrain,
     'gatto' => catCat,
     _ => catMine,
   };
@@ -46,6 +49,9 @@ extension L10nData on AppLocalizations {
     'tastiera' => catKeyboardDesc,
     'lofi' => catLofiDesc,
     'pagine' => catPagesDesc,
+    'giappone' => catJapanDesc,
+    'grilli' => catCricketsDesc,
+    'treno' => catTrainDesc,
     'gatto' => catCatDesc,
     _ => catMineDesc,
   };

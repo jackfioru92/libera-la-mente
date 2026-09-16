@@ -264,6 +264,24 @@ class AppLocalizationsEn extends AppLocalizations {
   String get catBarberDesc => 'Scissors, razor, shaving brush';
 
   @override
+  String get catJapan => 'Japanese barber';
+
+  @override
+  String get catJapanDesc => 'Old-school razor, scissors and massage';
+
+  @override
+  String get catCrickets => 'Summer night';
+
+  @override
+  String get catCricketsDesc => 'Crickets and campfire';
+
+  @override
+  String get catTrain => 'Train ride';
+
+  @override
+  String get catTrainDesc => 'The rhythm of the rails, at night';
+
+  @override
   String get catHouse => 'ASMR House cleaning';
 
   @override

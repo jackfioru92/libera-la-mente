@@ -8,6 +8,7 @@ import '../data/scenes.dart';
 import '../l10n/l10n_ext.dart';
 import '../services/app_scope.dart';
 import '../services/haptics.dart';
+import '../services/prefs.dart';
 import '../services/voice_guide.dart';
 import '../theme.dart';
 import '../widgets/asmr_picker.dart';
@@ -218,237 +219,283 @@ class _RespiraScreenState extends State<RespiraScreen>
               ),
             ),
             SafeArea(
-              child: Column(
-                children: [
-                  // ------------------------------------------------ header
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(22, 14, 10, 2),
-                    child: Row(
-                      children: [
-                        Text(
-                          l.tabBreathe,
-                          style: const TextStyle(
-                            fontSize: 34,
-                            fontWeight: FontWeight.w300,
-                          ),
-                        ),
-                        const Spacer(),
-                        IconButton(
-                          iconSize: 32,
-                          padding: const EdgeInsets.all(10),
-                          tooltip: prefs.haptics ? l.hapticsOn : l.hapticsOff,
-                          onPressed: () {
-                            final on = !prefs.haptics;
-                            prefs.setHaptics(on);
-                            if (on) Haptics.confirm();
-                          },
-                          icon: Icon(
-                            Icons.vibration,
-                            color: prefs.haptics
-                                ? AppColors.accent
-                                : AppColors.muted.withValues(alpha: 0.6),
-                          ),
-                        ),
-                        IconButton(
-                          iconSize: 36,
-                          padding: const EdgeInsets.all(10),
-                          tooltip: prefs.voiceGuide ? l.voiceOn : l.voiceOff,
-                          onPressed: () {
-                            prefs.setVoiceGuide(!prefs.voiceGuide);
-                            if (prefs.voiceGuide) {
-                              _prepareVoice().then(
-                                (_) => _scope!.voice.say(
-                                  VoiceGuide.test,
-                                  l.voiceOn,
-                                ),
-                              );
-                            } else {
-                              _scope!.voice.stop();
-                            }
-                          },
-                          icon: Icon(
-                            prefs.voiceGuide
-                                ? Icons.record_voice_over
-                                : Icons.voice_over_off,
-                            color: prefs.voiceGuide
-                                ? AppColors.accent
-                                : AppColors.muted,
-                          ),
-                        ),
-                      ],
-                    ),
-                  ),
-                  // Sfondi: riga a sé, scorrevole (colori a sinistra, foto a destra).
-                  SizedBox(
-                    height: 44,
-                    child: ListView(
-                      scrollDirection: Axis.horizontal,
-                      padding: const EdgeInsets.symmetric(horizontal: 22),
-                      children: [
-                        for (final s in sceltaScene)
-                          Padding(
-                            padding: const EdgeInsets.only(right: 8),
-                            child: SceneDot(
-                              scene: s,
-                              size: 34,
-                              selected: s.id == scena.id,
-                              onTap: () => prefs.setSceneId(s.id),
-                            ),
-                          ),
-                      ],
-                    ),
-                  ),
-                  // --------------------------------------------- quadrato
-                  Expanded(
-                    child: LayoutBuilder(
-                      builder: (context, constraints) => Center(
-                        child: AnimatedBuilder(
-                          animation: _ctrl,
-                          builder: (_, _) {
-                            final s = breathState(_ctrl.value);
-                            final secondsLeft = (side - s.progress * side)
-                                .ceil()
-                                .clamp(1, side);
-                            // Si adatta all'altezza libera: con mini-player e
-                            // mixer aperti il quadrato si rimpicciolisce.
-                            final size = math
-                                .min(
-                                  math.min(
-                                    MediaQuery.sizeOf(context).width - 80,
-                                    constraints.maxHeight - 56,
-                                  ),
-                                  300.0,
-                                )
-                                .clamp(140.0, 300.0);
-                            return Column(
-                              mainAxisSize: MainAxisSize.min,
-                              children: [
-                                BreathingBox(
-                                  phase: s.phase,
-                                  phaseProgress: s.progress,
-                                  breath: _running ? s.breath : 0.2,
-                                  secondsLeft: secondsLeft,
-                                  running: _running,
-                                  label: _running ? l.phases[s.phase] : l.ready,
-                                  size: size,
-                                ),
-                                const SizedBox(height: 8),
-                                Text(
-                                  _statusLine(l, prefs.sessionMinutes),
-                                  style: const TextStyle(
-                                    color: AppColors.muted,
-                                    fontSize: 13,
-                                    letterSpacing: 0.5,
-                                  ),
-                                ),
-                              ],
-                            );
-                          },
-                        ),
-                      ),
-                    ),
-                  ),
-                  // --------------------------------------------- controlli
-                  Padding(
-                    padding: const EdgeInsets.fromLTRB(18, 0, 18, 14),
-                    child: Column(
-                      children: [
-                        _ChipRow(
-                          label: l.labelSide,
-                          values: const [3, 4, 5, 6],
-                          selected: side,
-                          format: l.secondsShort,
-                          onSelected: _setSide,
-                        ),
-                        const SizedBox(height: 6),
-                        _ChipRow(
-                          label: l.labelMinutes,
-                          values: const [1, 3, 5, 10, 0],
-                          selected: prefs.sessionMinutes,
-                          format: (v) => v == 0 ? '∞' : '$v',
-                          onSelected: (v) {
-                            prefs.setSessionMinutes(v);
-                            if (_running) {
-                              _endTimer?.cancel();
-                              if (v > 0) {
-                                final elapsed = DateTime.now().difference(
-                                  _startedAt ?? DateTime.now(),
-                                );
-                                final left = Duration(minutes: v) - elapsed;
-                                _endTimer = Timer(
-                                  left.isNegative ? Duration.zero : left,
-                                  () => _stop(completed: true),
-                                );
-                              }
-                            }
-                          },
-                        ),
-                        const SizedBox(height: 12),
-                        Row(
+              child: LayoutBuilder(
+                builder: (context, outer) {
+                  // Con mini-player espanso (video 16:9 + mixer) lo spazio
+                  // non basta: la pagina scorre e il quadrato non si schiaccia.
+                  final compact = outer.maxHeight < 620;
+                  final column = Column(
+                    mainAxisSize: compact ? MainAxisSize.min : MainAxisSize.max,
+                    children: [
+                      // ------------------------------------------------ header
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(22, 14, 10, 2),
+                        child: Row(
                           children: [
-                            Expanded(
-                              child: ListenableBuilder(
-                                listenable: player,
-                                builder: (context, _) {
-                                  final v = player.current;
-                                  return OutlinedButton.icon(
-                                    onPressed: () => showAsmrPicker(context),
-                                    style: OutlinedButton.styleFrom(
-                                      foregroundColor: AppColors.text,
-                                      side: BorderSide(
-                                        color: Colors.white.withValues(
-                                          alpha: 0.2,
-                                        ),
-                                      ),
-                                      padding: const EdgeInsets.symmetric(
-                                        horizontal: 14,
-                                        vertical: 16,
-                                      ),
-                                      shape: RoundedRectangleBorder(
-                                        borderRadius: BorderRadius.circular(
-                                          999,
-                                        ),
-                                      ),
-                                    ),
-                                    icon: Icon(
-                                      v == null
-                                          ? Icons.headphones
-                                          : Icons.graphic_eq,
-                                      size: 18,
-                                    ),
-                                    label: Text(
-                                      v == null
-                                          ? l.soundButton
-                                          : v.titolo.get(context),
-                                      maxLines: 1,
-                                      overflow: TextOverflow.ellipsis,
-                                    ),
-                                  );
-                                },
+                            Text(
+                              l.tabBreathe,
+                              style: const TextStyle(
+                                fontSize: 34,
+                                fontWeight: FontWeight.w300,
                               ),
                             ),
-                            const SizedBox(width: 10),
-                            Expanded(
-                              child: FilledButton.icon(
-                                onPressed: _running ? () => _stop() : _start,
-                                style: _running
-                                    ? FilledButton.styleFrom(
-                                        backgroundColor: AppColors.surface2,
-                                        foregroundColor: AppColors.text,
-                                      )
-                                    : null,
-                                icon: Icon(
-                                  _running ? Icons.stop : Icons.play_arrow,
-                                ),
-                                label: Text(_running ? l.stop : l.start),
+                            const Spacer(),
+                            IconButton(
+                              iconSize: 32,
+                              padding: const EdgeInsets.all(10),
+                              tooltip: prefs.haptics
+                                  ? l.hapticsOn
+                                  : l.hapticsOff,
+                              onPressed: () {
+                                final on = !prefs.haptics;
+                                prefs.setHaptics(on);
+                                if (on) Haptics.confirm();
+                              },
+                              icon: Icon(
+                                Icons.vibration,
+                                color: prefs.haptics
+                                    ? AppColors.accent
+                                    : AppColors.muted.withValues(alpha: 0.6),
+                              ),
+                            ),
+                            IconButton(
+                              iconSize: 36,
+                              padding: const EdgeInsets.all(10),
+                              tooltip: prefs.voiceGuide
+                                  ? l.voiceOn
+                                  : l.voiceOff,
+                              onPressed: () {
+                                prefs.setVoiceGuide(!prefs.voiceGuide);
+                                if (prefs.voiceGuide) {
+                                  _prepareVoice().then(
+                                    (_) => _scope!.voice.say(
+                                      VoiceGuide.test,
+                                      l.voiceOn,
+                                    ),
+                                  );
+                                } else {
+                                  _scope!.voice.stop();
+                                }
+                              },
+                              icon: Icon(
+                                prefs.voiceGuide
+                                    ? Icons.record_voice_over
+                                    : Icons.voice_over_off,
+                                color: prefs.voiceGuide
+                                    ? AppColors.accent
+                                    : AppColors.muted,
                               ),
                             ),
                           ],
                         ),
-                      ],
-                    ),
+                      ),
+                      // Sfondi: riga a sé, scorrevole (colori a sinistra, foto a destra).
+                      SizedBox(
+                        height: 44,
+                        child: ListView(
+                          scrollDirection: Axis.horizontal,
+                          padding: const EdgeInsets.symmetric(horizontal: 22),
+                          children: [
+                            for (final s in sceltaScene)
+                              Padding(
+                                padding: const EdgeInsets.only(right: 8),
+                                child: SceneDot(
+                                  scene: s,
+                                  size: 34,
+                                  selected: s.id == scena.id,
+                                  onTap: () => prefs.setSceneId(s.id),
+                                ),
+                              ),
+                          ],
+                        ),
+                      ),
+                      // --------------------------------------------- quadrato
+                      _boxSection(compact, l, prefs, side),
+                      // --------------------------------------------- controlli
+                      Padding(
+                        padding: const EdgeInsets.fromLTRB(18, 0, 18, 14),
+                        child: Column(
+                          children: [
+                            _ChipRow(
+                              label: l.labelSide,
+                              values: const [3, 4, 5, 6],
+                              selected: side,
+                              format: l.secondsShort,
+                              onSelected: _setSide,
+                            ),
+                            const SizedBox(height: 6),
+                            _ChipRow(
+                              label: l.labelMinutes,
+                              values: const [1, 3, 5, 10, 0],
+                              selected: prefs.sessionMinutes,
+                              format: (v) => v == 0 ? '∞' : '$v',
+                              onSelected: (v) {
+                                prefs.setSessionMinutes(v);
+                                if (_running) {
+                                  _endTimer?.cancel();
+                                  if (v > 0) {
+                                    final elapsed = DateTime.now().difference(
+                                      _startedAt ?? DateTime.now(),
+                                    );
+                                    final left = Duration(minutes: v) - elapsed;
+                                    _endTimer = Timer(
+                                      left.isNegative ? Duration.zero : left,
+                                      () => _stop(completed: true),
+                                    );
+                                  }
+                                }
+                              },
+                            ),
+                            const SizedBox(height: 12),
+                            Row(
+                              children: [
+                                Expanded(
+                                  child: ListenableBuilder(
+                                    listenable: player,
+                                    builder: (context, _) {
+                                      final v = player.current;
+                                      return OutlinedButton.icon(
+                                        onPressed: () =>
+                                            showAsmrPicker(context),
+                                        style: OutlinedButton.styleFrom(
+                                          foregroundColor: AppColors.text,
+                                          side: BorderSide(
+                                            color: Colors.white.withValues(
+                                              alpha: 0.2,
+                                            ),
+                                          ),
+                                          padding: const EdgeInsets.symmetric(
+                                            horizontal: 14,
+                                            vertical: 16,
+                                          ),
+                                          shape: RoundedRectangleBorder(
+                                            borderRadius: BorderRadius.circular(
+                                              999,
+                                            ),
+                                          ),
+                                        ),
+                                        icon: Icon(
+                                          v == null
+                                              ? Icons.headphones
+                                              : Icons.graphic_eq,
+                                          size: 18,
+                                        ),
+                                        label: Text(
+                                          v == null
+                                              ? l.soundButton
+                                              : v.titolo.get(context),
+                                          maxLines: 1,
+                                          overflow: TextOverflow.ellipsis,
+                                        ),
+                                      );
+                                    },
+                                  ),
+                                ),
+                                const SizedBox(width: 10),
+                                Expanded(
+                                  child: FilledButton.icon(
+                                    onPressed: _running
+                                        ? () => _stop()
+                                        : _start,
+                                    style: _running
+                                        ? FilledButton.styleFrom(
+                                            backgroundColor: AppColors.surface2,
+                                            foregroundColor: AppColors.text,
+                                          )
+                                        : null,
+                                    icon: Icon(
+                                      _running ? Icons.stop : Icons.play_arrow,
+                                    ),
+                                    label: Text(_running ? l.stop : l.start),
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ],
+                        ),
+                      ),
+                    ],
+                  );
+                  return compact
+                      ? SingleChildScrollView(child: column)
+                      : column;
+                },
+              ),
+            ),
+          ],
+        );
+      },
+    );
+  }
+
+  /// Il quadrato con la riga di stato. Se c'è spazio, occupa tutto il centro
+  /// adattando la dimensione; altrimenti dimensione fissa e pagina scorrevole.
+  Widget _boxSection(
+    bool compact,
+    AppLocalizations l,
+    AppPrefs prefs,
+    int side,
+  ) {
+    if (compact) {
+      return Padding(
+        padding: const EdgeInsets.symmetric(vertical: 18),
+        child: Center(
+          child: _box(
+            math.min(MediaQuery.sizeOf(context).width - 80, 240.0),
+            l,
+            prefs,
+            side,
+          ),
+        ),
+      );
+    }
+    return Expanded(
+      child: LayoutBuilder(
+        builder: (context, constraints) => Center(
+          child: _box(
+            math
+                .min(
+                  math.min(
+                    MediaQuery.sizeOf(context).width - 80,
+                    constraints.maxHeight - 56,
                   ),
-                ],
+                  300.0,
+                )
+                .clamp(140.0, 300.0),
+            l,
+            prefs,
+            side,
+          ),
+        ),
+      ),
+    );
+  }
+
+  Widget _box(double size, AppLocalizations l, AppPrefs prefs, int side) {
+    return AnimatedBuilder(
+      animation: _ctrl,
+      builder: (_, _) {
+        final s = breathState(_ctrl.value);
+        final secondsLeft = (side - s.progress * side).ceil().clamp(1, side);
+        return Column(
+          mainAxisSize: MainAxisSize.min,
+          children: [
+            BreathingBox(
+              phase: s.phase,
+              phaseProgress: s.progress,
+              breath: _running ? s.breath : 0.2,
+              secondsLeft: secondsLeft,
+              running: _running,
+              label: _running ? l.phases[s.phase] : l.ready,
+              size: size,
+            ),
+            const SizedBox(height: 8),
+            Text(
+              _statusLine(l, prefs.sessionMinutes),
+              style: const TextStyle(
+                color: AppColors.muted,
+                fontSize: 13,
+                letterSpacing: 0.5,
               ),
             ),
           ],

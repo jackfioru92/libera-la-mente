@@ -17,6 +17,11 @@ const List<AsmrCategory> asmrCategorie = [
     colori: [Color(0xFF3A2A4D), Color(0xFF7A4E8C)],
   ),
   AsmrCategory(
+    id: 'giappone',
+    icona: Icons.spa,
+    colori: [Color(0xFF3A1F2E), Color(0xFF8C4E5E)],
+  ),
+  AsmrCategory(
     id: 'casa',
     icona: Icons.cleaning_services,
     colori: [Color(0xFF1E3A4C), Color(0xFF3E7C93)],
@@ -67,6 +72,18 @@ const List<AsmrCategory> asmrCategorie = [
     colori: [Color(0xFF1F2A2E), Color(0xFF4E7A7C)],
   ),
   AsmrCategory(
+    id: 'grilli',
+    icona: Icons.nightlight_round,
+    colori: [Color(0xFF14261E), Color(0xFF3E6A4A)],
+    calmante: true,
+  ),
+  AsmrCategory(
+    id: 'treno',
+    icona: Icons.train,
+    colori: [Color(0xFF22262E), Color(0xFF5A6478)],
+    calmante: true,
+  ),
+  AsmrCategory(
     id: 'pagine',
     icona: Icons.menu_book,
     colori: [Color(0xFF3A2E1E), Color(0xFF8A6A3E)],
@@ -95,6 +112,306 @@ const AsmrCategory categoriaMiei = AsmrCategory(
 /// Video YouTube incorporati (embed ufficiale, nessun download).
 /// Tutti gli ID sono stati verificati come embeddabili tramite oEmbed.
 const List<AsmrVideo> asmrVideos = [
+  // Barber: solo forbici (i preferiti dell'autore in cima)
+  AsmrVideo(
+    id: 'kugOo5WllEk',
+    categoriaId: 'barber',
+    autore: 'SWITCHSCISSORS',
+    titolo: LText(
+      'Taglio uomo solo forbici, 3 ore',
+      'Men\'s haircut with scissors only, 3 hours',
+    ),
+  ),
+  AsmrVideo(
+    id: 'se-qWTTad8I',
+    categoriaId: 'barber',
+    autore: 'SWITCHSCISSORS',
+    titolo: LText('Taglio uomo, 3 ore', 'Men\'s haircut, 3 hours'),
+  ),
+  AsmrVideo(
+    id: '00hKOxcuBb0',
+    categoriaId: 'barber',
+    autore: 'SWITCHSCISSORS',
+    titolo: LText(
+      'Forbici sfoltitrici, 1 ora',
+      'Thinning scissors haircut, 1 hour',
+    ),
+  ),
+  AsmrVideo(
+    id: 'hKhGNzVRA28',
+    categoriaId: 'barber',
+    autore: 'SWITCHSCISSORS',
+    titolo: LText(
+      'Taglio a forbice "shingling", 1 ora',
+      'Shingling scissors haircut, 1 hour',
+    ),
+  ),
+  AsmrVideo(
+    id: 'rGRNVy2ylKw',
+    categoriaId: 'barber',
+    autore: 'SWITCHSCISSORS',
+    titolo: LText('Forbici + pioggia', 'Scissors haircut + rain sound'),
+  ),
+  AsmrVideo(
+    id: 'cDaMksWkt3w',
+    categoriaId: 'barber',
+    autore: 'SWITCHSCISSORS',
+    titolo: LText(
+      'Taglio uomo di SWITCHSCISSORS',
+      'SWITCHSCISSORS\' men\'s haircut',
+    ),
+  ),
+  AsmrVideo(
+    id: 'WpAaK3ShK3w',
+    categoriaId: 'barber',
+    autore: 'SWITCHSCISSORS',
+    titolo: LText('Taglio uomo, solo forbici', 'Men\'s haircut, scissors'),
+  ),
+  AsmrVideo(
+    id: 'yIBc4AbkN9w',
+    categoriaId: 'barber',
+    autore: 'CalmCuts',
+    titolo: LText(
+      'Solo forbici, 1 ora, no talking (parte 1)',
+      'Scissors only, 1 hour, no talking (part 1)',
+    ),
+  ),
+  AsmrVideo(
+    id: 'xqoEALKAIG8',
+    categoriaId: 'barber',
+    autore: 'CalmCuts',
+    titolo: LText(
+      'Solo forbici, 1 ora, no talking (parte 2)',
+      'Scissors only, 1 hour, no talking (part 2)',
+    ),
+  ),
+  AsmrVideo(
+    id: '8WGC7PvqZjg',
+    categoriaId: 'barber',
+    autore: 'CalmCuts',
+    titolo: LText(
+      'Textured crop, solo forbici, no talking',
+      'Textured crop haircut, scissors only, no talking',
+    ),
+  ),
+  AsmrVideo(
+    id: 'M5P07dkqIUk',
+    categoriaId: 'barber',
+    autore: 'Hair Hood',
+    titolo: LText(
+      'Taglio a forbice rilassante, sonno immediato',
+      'Relaxing scissor haircut, instant sleep',
+    ),
+  ),
+  AsmrVideo(
+    id: 'i5tFNI6_mSw',
+    categoriaId: 'barber',
+    autore: 'Tonyy Asmr',
+    titolo: LText(
+      'Forbici e suoni da barbiere in stereo, no talking',
+      'Scissors & barbershop sounds in stereo, no talking',
+    ),
+  ),
+  AsmrVideo(
+    id: 'S17mHuZQ968',
+    categoriaId: 'barber',
+    autore: 'ASMR Den',
+    titolo: LText(
+      '1 ora di suoni da barbiere, senza pubblicità in mezzo',
+      '1 hour of barbershop sounds, no mid-roll ads',
+    ),
+  ),
+  // Barbiere giapponese
+  AsmrVideo(
+    id: 'PVWrdXzJBqg',
+    categoriaId: 'giappone',
+    autore: 'Yes Plz ASMR',
+    titolo: LText(
+      'La vecchia scuola del barbiere tradizionale giapponese',
+      'How old-school barbering is meant to be done, traditional Japan',
+    ),
+  ),
+  AsmrVideo(
+    id: 'HJ_A6cBKCjo',
+    categoriaId: 'giappone',
+    autore: 'Yes Plz ASMR',
+    titolo: LText(
+      'Vecchia scuola con le forbici: taglio classico e rasoio',
+      'Old-school barbering with scissors: classic haircut & straight razor',
+    ),
+  ),
+  AsmrVideo(
+    id: 'HWpkXVmsJrM',
+    categoriaId: 'giappone',
+    autore: 'Yes Plz ASMR',
+    titolo: LText(
+      'Solo forbici dal barbiere tradizionale giapponese',
+      'Scissors-only haircut by a traditional Japanese barber',
+    ),
+  ),
+  AsmrVideo(
+    id: 'px8wwnOJPSI',
+    categoriaId: 'giappone',
+    autore: 'Yes Plz ASMR',
+    titolo: LText(
+      'Taglio e rasatura in una bottega su misura a Tokyo, no talking',
+      'Haircut & shave at a bespoke barber in Tokyo, no talking',
+    ),
+  ),
+  AsmrVideo(
+    id: 'bvvTIsoviQI',
+    categoriaId: 'giappone',
+    autore: 'Yes Plz ASMR',
+    titolo: LText(
+      'Barbiera giapponese: taglio, barba e massaggio a Tokyo',
+      'Japanese female barber: haircut, shave & massage in Tokyo',
+    ),
+  ),
+  AsmrVideo(
+    id: 'S-BSLjv50wc',
+    categoriaId: 'giappone',
+    autore: 'Yes Plz ASMR',
+    titolo: LText(
+      'Barbiere veterano: taglio, shampoo e massaggio',
+      'Veteran barber: traditional haircut, shampoo & massage',
+    ),
+  ),
+  AsmrVideo(
+    id: 'kWQzJ9htbpo',
+    categoriaId: 'giappone',
+    autore: 'Yes Plz ASMR',
+    titolo: LText(
+      'Servizio completo: taglio, shampoo, rasatura e massaggio',
+      'Full service: haircut, shampoo, shave & massage',
+    ),
+  ),
+  AsmrVideo(
+    id: 'Rxl1-tisAls',
+    categoriaId: 'giappone',
+    autore: 'Yes Plz ASMR',
+    titolo: LText(
+      'Ha fatto tutto: taglio, rasatura, massaggio',
+      'He did everything: haircut, shave, massage',
+    ),
+  ),
+  AsmrVideo(
+    id: '3a5xFfX9O8w',
+    categoriaId: 'giappone',
+    autore: 'Yes Plz ASMR',
+    titolo: LText(
+      'Lei ha fatto tutto: servizio completo dal barbiere',
+      'She did everything: full barbering service',
+    ),
+  ),
+  AsmrVideo(
+    id: 'fI5a3V1G4aQ',
+    categoriaId: 'giappone',
+    autore: 'Nomad Barber',
+    titolo: LText(
+      'Taglio e rasatura in una barberia giapponese di 105 anni',
+      'Haircut & shave at a 105-year-old Japanese barbershop',
+    ),
+  ),
+  AsmrVideo(
+    id: 'PLna-heet9Y',
+    categoriaId: 'giappone',
+    autore: 'Svetlana Yuminova',
+    titolo: LText(
+      'Rasatura tradizionale in POV: schiuma densa e rasoio',
+      'Traditional shave POV: thick foam & sharp razor, no talking',
+    ),
+  ),
+  // Clean shoes: Angelo Shoe Shine
+  AsmrVideo(
+    id: 'RwDf-2Wuclw',
+    categoriaId: 'scarpe',
+    autore: 'Angelo Shoe Shine',
+    titolo: LText('Restauro completo', 'Full restoration'),
+  ),
+  AsmrVideo(
+    id: 'fHOcD2HiYZA',
+    categoriaId: 'scarpe',
+    autore: 'Angelo Shoe Shine',
+    titolo: LText(
+      'Restauro totale: da vecchie a nuove',
+      'Total restoration: old to new',
+    ),
+  ),
+  AsmrVideo(
+    id: 'y7x0teONz94',
+    categoriaId: 'scarpe',
+    autore: 'Angelo Shoe Shine',
+    titolo: LText(
+      'Il restauro di stivali più soddisfacente',
+      'The most satisfying boot restoration',
+    ),
+  ),
+  AsmrVideo(
+    id: 'ytVrWKagDJQ',
+    categoriaId: 'scarpe',
+    autore: 'Angelo Shoe Shine',
+    titolo: LText(
+      'Il miglior restauro di stivali',
+      'The best boot restoration',
+    ),
+  ),
+  AsmrVideo(
+    id: 'iBpByL7neok',
+    categoriaId: 'scarpe',
+    autore: 'Angelo Shoe Shine',
+    titolo: LText(
+      'Restauro di stivali, il migliore in assoluto',
+      'The very best boot restoration',
+    ),
+  ),
+  AsmrVideo(
+    id: 'Y3rrclN8ybA',
+    categoriaId: 'scarpe',
+    autore: 'Angelo Shoe Shine',
+    titolo: LText(
+      'Stivali distrutti, restaurati',
+      'Destroyed boot restoration',
+    ),
+  ),
+  AsmrVideo(
+    id: 'tugo7rkNUE8',
+    categoriaId: 'scarpe',
+    autore: 'Angelo Shoe Shine',
+    titolo: LText('Un restauro incredibile', 'Unbelievable restoration'),
+  ),
+  AsmrVideo(
+    id: 'CgDR2j0gq1g',
+    categoriaId: 'scarpe',
+    autore: 'Angelo Shoe Shine',
+    titolo: LText('Restauro di vecchi stivali', 'Old boot restoration'),
+  ),
+  AsmrVideo(
+    id: '3-MI3Zw0n9k',
+    categoriaId: 'scarpe',
+    autore: 'Angelo Shoe Shine',
+    titolo: LText(
+      'Stivali vecchi e opachi, restaurati',
+      'Old and dull boot restoration',
+    ),
+  ),
+  AsmrVideo(
+    id: '8Y7uHaU-nl8',
+    categoriaId: 'scarpe',
+    autore: 'Angelo Shoe Shine',
+    titolo: LText(
+      'Restaurare stivali per rilassarsi',
+      'Restoring your boots for relaxation',
+    ),
+  ),
+  AsmrVideo(
+    id: 'IcB5Mdl3qTg',
+    categoriaId: 'scarpe',
+    autore: 'Angelo Shoe Shine',
+    titolo: LText(
+      'Stivali vecchi e secchi, restaurati',
+      'Restoring old and dry boots',
+    ),
+  ),
   // Barber
   AsmrVideo(
     id: 'vmlvi9DjOdg',
@@ -1020,6 +1337,216 @@ const List<AsmrVideo> asmrVideos = [
     titolo: LText(
       'Gatto che fa le fusa, 10 ore, sonno profondo',
       'Purring cat, 10 hours, deep sleep',
+    ),
+  ),
+  // Lo-fi (2)
+  AsmrVideo(
+    id: 'E2vONfzoyRI',
+    categoriaId: 'lofi',
+    autore: 'Lofi Girl',
+    titolo: LText(
+      'jazz lofi radio 🎷 beats to chill/study to',
+      'jazz lofi radio 🎷 beats to chill/study to',
+    ),
+  ),
+  AsmrVideo(
+    id: 'KsfdFd10358',
+    categoriaId: 'lofi',
+    autore: 'Jazzy Lofi Beats',
+    titolo: LText(
+      'Jazz lofi con pioggia, per concentrarsi',
+      'Rainy jazz lofi for concentration & deep work',
+    ),
+  ),
+  AsmrVideo(
+    id: 'e4wvocg8U2I',
+    categoriaId: 'lofi',
+    autore: 'The Japanese Town',
+    titolo: LText(
+      'Pioggia tranquilla 🌙 lofi per dormire, live',
+      'Tranquil rain 🌙 lofi beats to sleep, live',
+    ),
+  ),
+  AsmrVideo(
+    id: 'asWn6GSVvKk',
+    categoriaId: 'lofi',
+    autore: 'The Japanese Town',
+    titolo: LText(
+      'Sussurri di pioggia 🌙 lofi hip hop, live',
+      'Whispers of rain 🌙 lofi hip hop, live',
+    ),
+  ),
+  AsmrVideo(
+    id: '_Cnpoo8EMn8',
+    categoriaId: 'lofi',
+    autore: 'chill chill journal',
+    titolo: LText(
+      'Pioggia e jazz lofi per riposare',
+      'Peaceful rain & lofi jazz to rest and sleep',
+    ),
+  ),
+  AsmrVideo(
+    id: 'YCiCeGp9MgA',
+    categoriaId: 'lofi',
+    autore: 'Groove Boom Hop',
+    titolo: LText(
+      'Jazz x hip hop soulful, radio 24/7',
+      'Soulful jazz x hip hop, 24/7 radio',
+    ),
+  ),
+  // Notte d'estate: grilli e fuoco da campo
+  AsmrVideo(
+    id: 'EUCzn76UFE0',
+    categoriaId: 'grilli',
+    autore: 'TMSOFT',
+    titolo: LText(
+      'Fuoco da campo e grilli, 10 ore, schermo nero',
+      'Summer campfire and crickets, 10 hours, black screen',
+    ),
+  ),
+  AsmrVideo(
+    id: 'QMJYlmX1sNU',
+    categoriaId: 'grilli',
+    autore: 'Relaxing White Noise',
+    titolo: LText(
+      'Fuoco da campo con grilli',
+      'Campfire sleep sounds with crickets chirping',
+    ),
+  ),
+  AsmrVideo(
+    id: '_RqfH05VcrQ',
+    categoriaId: 'grilli',
+    autore: 'Serene Sounds',
+    titolo: LText(
+      'Notte d\'estate: grilli, 10 ore',
+      'Summer night sounds: crickets, 10 hours',
+    ),
+  ),
+  AsmrVideo(
+    id: 'qUaF33IE3jw',
+    categoriaId: 'grilli',
+    autore: 'SleepySounds',
+    titolo: LText(
+      'Fuoco da campo e grilli, 10 ore',
+      'Campfire and crickets, 10 hour sleep sound',
+    ),
+  ),
+  AsmrVideo(
+    id: '5-UWXylsgag',
+    categoriaId: 'grilli',
+    autore: 'TheSilentWatcher',
+    titolo: LText(
+      'Lucciole e grilli, 10 ore',
+      'Fireflies & crickets, 10 hours',
+    ),
+  ),
+  AsmrVideo(
+    id: 'L_awYF03B0Q',
+    categoriaId: 'grilli',
+    autore: 'FIREOS',
+    titolo: LText(
+      'Fuoco da campo 4K con grilli nel bosco',
+      '4K campfire with gentle crickets, forest night',
+    ),
+  ),
+  AsmrVideo(
+    id: 'nINkKPFTrG4',
+    categoriaId: 'grilli',
+    autore: 'KDeKay Sleep Sounds',
+    titolo: LText(
+      'Conversazioni di grilli, 10 ore binaurali',
+      'Cricket conversations, 10 hours binaural',
+    ),
+  ),
+  AsmrVideo(
+    id: 'vR7rWIs4wbc',
+    categoriaId: 'grilli',
+    autore: 'Beautiful Relaxation',
+    titolo: LText(
+      'Fuoco che crepita e grilli nella foresta, live',
+      'Crackling campfire & crickets in the forest, live',
+    ),
+  ),
+  // Viaggio in treno
+  AsmrVideo(
+    id: 'pqfQhPM8reU',
+    categoriaId: 'treno',
+    autore: 'Relaxing White Noise',
+    titolo: LText(
+      'Treno per dormire, rumore bianco, 10 ore',
+      'Train sound for sleep, white noise, 10 hours',
+    ),
+  ),
+  AsmrVideo(
+    id: 'pyyJQD91qMU',
+    categoriaId: 'treno',
+    autore: 'Relaxing White Noise',
+    titolo: LText(
+      'Treno di lusso, 10 ore di viaggio',
+      'Luxury train ride, 10 hours',
+    ),
+  ),
+  AsmrVideo(
+    id: 'XpgXGyiQvqc',
+    categoriaId: 'treno',
+    autore: 'Sleep Sounds Express',
+    titolo: LText(
+      'In treno di notte, 10 ore',
+      'Riding a train at night, 10 hours',
+    ),
+  ),
+  AsmrVideo(
+    id: 'o05TB15lVQY',
+    categoriaId: 'treno',
+    autore: 'AfterHours Music Studio',
+    titolo: LText(
+      'Treno, 10 ore, schermo nero',
+      'Train sleep sounds, 10 hours, black screen',
+    ),
+  ),
+  AsmrVideo(
+    id: 'KtPj5rLNbeY',
+    categoriaId: 'treno',
+    autore: 'CalmYourStress',
+    titolo: LText(
+      'Treno notturno, binari gentili, 10 ore',
+      'Night train ride, gentle tracks, 10 hours',
+    ),
+  ),
+  AsmrVideo(
+    id: 'Hq7-lwQBJMU',
+    categoriaId: 'treno',
+    autore: 'Focus Flow',
+    titolo: LText(
+      'Ritmo dei binari e natura lontana, 10 ore',
+      'Rhythmic railway sounds & distant nature, 10 hours',
+    ),
+  ),
+  AsmrVideo(
+    id: 'BELKTFzdjPU',
+    categoriaId: 'treno',
+    autore: 'Amtrak',
+    titolo: LText(
+      '10 ore a bordo di un Amtrak',
+      '10-hour Amtrak train ambiance',
+    ),
+  ),
+  AsmrVideo(
+    id: '0Ujw4Zq1D9o',
+    categoriaId: 'treno',
+    autore: 'Serene Soundscape',
+    titolo: LText(
+      'Pioggia sul treno notturno, 10 ore',
+      'Rain on a cozy sleeper train, 10 hours',
+    ),
+  ),
+  AsmrVideo(
+    id: 'UcC365Wf58s',
+    categoriaId: 'treno',
+    autore: 'Black & White Ambience',
+    titolo: LText(
+      'Treno e pioggia battente, 10 ore',
+      'Heavy rain & train sounds, 10 hours',
     ),
   ),
 ];
